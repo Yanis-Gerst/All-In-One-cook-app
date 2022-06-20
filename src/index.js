@@ -1,10 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./Css/main.css";
+import "./Css/Presentation.css";
+import "./Css/modale.css";
+import "./Css/recipie.css";
+import "./Css/register.css";
+import "./Css/userAccount.css";
+import "./Css/Fridge.css";
+import "./Css/searchBar.css";
+import "./Css/header.css";
+import "./Css/DropDown.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />

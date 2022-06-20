@@ -1,0 +1,20 @@
+.user-info-container {
+  flex-basis: 50%;
+  padding: 2em 1.5em;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+
+  .data-container {
+    display: flex;
+    gap: 0.5em;
+  }
+  p[data="pseudo-body"] {
+    font-weight: bold;
+  }
+
+  p[data="password-body"] {
+    -webkit-text-security: disc;
+  }
+}

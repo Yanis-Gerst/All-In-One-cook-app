@@ -1,0 +1,262 @@
+//Some Fridge also
+.recipies-container,
+.fridge-container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  gap: 1.5em;
+}
+
+.recipies-header {
+  display: flex;
+  flex-basis: 20%;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(97.5% - 4em);
+  padding-left: 0.2em;
+  img {
+    width: 50px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+  }
+
+  button {
+    border-radius: 5px;
+    border: none;
+    background-color: #f7dc6f;
+    color: #373737;
+    padding: 0.3em 0.5em;
+    border: 1px solid #333;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+.rec-container,
+.fridge-body {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  flex-basis: 80%;
+  position: relative;
+  margin: 0 4.2em;
+  padding-bottom: 5em;
+}
+
+.rec {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 20px 30px;
+  border-radius: 5px;
+  font-size: 1.15em;
+  flex-basis: 32%;
+  background-color: #f8c471;
+  color: #373737;
+  display: flex;
+  flex-flow: column;
+  gap: 0.7em;
+  cursor: pointer;
+
+  .rec-img-container {
+    text-align: center;
+    width: 100%;
+    height: 50%;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .rec-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .rec-note {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.btn-delete {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  background-color: #373737;
+  color: #fff;
+  font-size: 0.6em;
+  padding: 0.4em 0.9em;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-container {
+  position: absolute;
+  top: 0;
+  right: -7%;
+
+  button {
+    border-radius: 5px;
+    border: none;
+    background-color: #f7dc6f;
+    color: #373737;
+    padding: 0.3em 0.5em;
+    border: 1px solid #333;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+//Recipie Details
+
+.rec-detail-container {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 30px 40px;
+  width: clamp(50%, 70%, 80%);
+  min-height: 70%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f8c471;
+  border-radius: 3px;
+  gap: 1em;
+  color: #373737;
+
+  [contenteditable="true"] {
+    padding: 10px;
+
+    &:focus {
+      outline: 1px solid #424949;
+      background-color: #f7dc6f;
+      border-radius: 5px;
+    }
+  }
+
+  .rec-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: span 2;
+  }
+
+  & > * {
+    user-select: none;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  ul {
+    display: flex;
+    gap: 5px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  input {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+  }
+
+  svg {
+    width: 2em;
+    height: 2em;
+  }
+
+  //Card Ui Rec
+  .rec-img {
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 3px;
+    background: transparent;
+  }
+
+  .rec-name {
+    font-size: 2.5em;
+  }
+
+  .rec-info {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+    height: 90%;
+    resize: both;
+  }
+
+  .rec-info-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5em;
+  }
+
+  .rec-desc {
+    color: #626567;
+  }
+
+  .rec-process p {
+    white-space: pre-line;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  h4 {
+    font-size: 1.8em;
+  }
+
+  .counter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .btn-container {
+      & > * {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .counter-container svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.rec-wrapper {
+  display: flex;
+  align-items: center;
+
+  p {
+    max-width: 80%;
+    min-width: 10%;
+    hyphens: auto;
+  }
+}
+
+.rec-ingredient-container {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+}
+
+.rec-tag-container {
+  display: flex;
+  align-items: center;
+}

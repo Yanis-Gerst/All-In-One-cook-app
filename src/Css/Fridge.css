@@ -1,0 +1,92 @@
+.fridge-header {
+  padding-left: 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fridge-header .header-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.7em;
+}
+
+.fridge-header .fridge-header-icon {
+  font-size: 2em;
+}
+
+.ing-card {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 1em;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background-color: var(--fridge-color);
+}
+
+.ing-card p {
+  max-width: 80%;
+  min-width: 10%;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.ing-card [contenteditable="true"]:focus {
+  outline: 1px solid #424949;
+  background-color: #d5f0fa;
+  border-radius: 5px;
+}
+
+.ing-meta-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.ing-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.drag-over {
+  opacity: 0.1;
+}
+
+.btn-add-fridge {
+  padding: 0.25em 0.7em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: var(--fridge-color);
+  border: 1px solid #333;
+}
+
+.btn-add-fridge:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.btn-add-fridge:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+/*# sourceMappingURL=Fridge.css.map */

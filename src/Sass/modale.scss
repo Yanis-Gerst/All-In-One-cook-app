@@ -1,0 +1,77 @@
+
+.modale-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    & > * {
+        margin-top: 5em;
+    }
+}
+
+.form-container {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 50%;
+    padding: 20px;
+    flex-basis: 60%;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x:hidden ;
+    background-color: #fff;
+
+    
+
+    input, textarea {
+        border: 1px solid #D0D3D4;
+        background-color: #FDFEFE;
+        padding: 5px 10px;
+        outline: none;
+        border-radius: 3px;
+        color: #111;
+        resize: none;
+    }
+    
+   
+
+    label {
+        color: #EC7063;
+    }
+    
+    .icon-button {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        transform: scale(2.5);
+        cursor: pointer;
+        
+    }
+}
+
+.form-control {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+
+.line-input {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.form-ingredient {
+    display: flex;
+    gap: 20px;
+}

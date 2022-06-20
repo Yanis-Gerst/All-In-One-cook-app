@@ -1,0 +1,103 @@
+.modale-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modale-container > * {
+  margin-top: 5em;
+}
+
+.form-container {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 50%;
+  padding: 20px;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 20px;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+.form-container input, .form-container textarea {
+  border: 1px solid #D0D3D4;
+  background-color: #FDFEFE;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 3px;
+  color: #111;
+  resize: none;
+}
+
+.form-container label {
+  color: #EC7063;
+}
+
+.form-container .icon-button {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+  cursor: pointer;
+}
+
+.form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 10px;
+}
+
+.line-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-ingredient {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+/*# sourceMappingURL=modale.css.map */

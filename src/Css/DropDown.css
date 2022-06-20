@@ -1,0 +1,19 @@
+.dropdown-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+}
+
+.dropdown-container .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  background-color: beige;
+  padding: 10px;
+}
+/*# sourceMappingURL=DropDown.css.map */

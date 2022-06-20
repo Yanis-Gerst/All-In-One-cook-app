@@ -1,0 +1,33 @@
+.presentation-container {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: var(--element-bg);
+}
+
+.presentation-container img {
+  border-radius: 5px;
+}
+
+.presentation {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.text-container {
+  padding: 20px;
+}
+/*# sourceMappingURL=Presentation.css.map */
