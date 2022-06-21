@@ -13,7 +13,7 @@ You may also see any lint errors in the console.
 
 ### `npm run server`
 
-This will start a server at the Url (hhttp://localhost:4001) with the db.json database.
+This will start a server at the Url (http://localhost:4001) with the db.json database.
 
 ### `npm test`
 
