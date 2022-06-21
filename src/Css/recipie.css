@@ -348,4 +348,16 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.ing-details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.6em;
+}
+
+.ing-details-container svg {
+  width: auto;
+  height: auto;
+}
 /*# sourceMappingURL=recipie.css.map */

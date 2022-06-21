@@ -8,22 +8,17 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { RecipiesContext } from "./Recipies";
 import { useUserContext } from "../App";
-import { useCallback } from "react";
+import useCounter from "../CustomHook/useCounter";
 
 import Button from "./Button";
 import IngredientDetails from "./IngredientDetails";
-
-const getSameIngredient = (userIngredients, ingredient) => {
-  const sameIngredient = Object.values(userIngredients).filter((userIng) => {
-    return userIng.name.toLowerCase() === ingredient.name.toLowerCase();
-  });
-  return sameIngredient;
-};
+import NutrionalsValue from "./NutrionalsValue";
+import CookRecipie from "./CookRecipie";
 
 const RecipieDetails = ({ recipie, toClose }) => {
   const user = useUserContext();
   const [currentRecipie, setCurrentRecipie] = useState({ ...recipie });
-  const [nbPerson, setNbPerson] = useState(1);
+  const [nbPerson, counterNbPerson] = useCounter(1, 1);
 
   const recipies = useContext(RecipiesContext);
   const ingredients = recipie.ingredients;
@@ -63,9 +58,9 @@ const RecipieDetails = ({ recipie, toClose }) => {
       value.name.toLowerCase()
     );
     if (!recIngNames.every((recName) => userIngNames.includes(recName))) {
-      console.log("T'as pas les ingrédients");
       return;
     }
+
     const userIng = { ...user.data.ingredients };
     Object.keys(userIng).map((key) => {
       let value = userIng[key];
@@ -79,45 +74,14 @@ const RecipieDetails = ({ recipie, toClose }) => {
     user.setData({ ...user.data, ingredients: userIng });
   };
 
-  const increment = () => {
-    setNbPerson((nb) => nb + 1);
-  };
+  // const increment = () => {
+  //   setNbPerson((nb) => nb + 1);
+  // };
 
-  const decrement = () => {
-    if (nbPerson <= 1) return;
-    setNbPerson((nb) => nb - 1);
-  };
-
-  //Futur Nutrionals Value Component
-
-  const allUserIngredients = useCallback(
-    Object.values(ingredients).map((ing) => {
-      return {
-        ...getSameIngredient(user.data.ingredients, ing)[0],
-        currentQuantity: ing.quantity,
-      };
-    }),
-    [ingredients, user.data.ingredient]
-  );
-  const nutrionalsIsNotDefine = allUserIngredients.some(
-    (userIng) => typeof userIng.nutrionals === "undefined"
-  );
-
-  let recNutrionalsValue;
-  if (!nutrionalsIsNotDefine) {
-    recNutrionalsValue = allUserIngredients.reduce(
-      (prev, curr) => {
-        if (!curr.nutrionals) return prev;
-        const forQuantity = curr.nutrionals.quantity;
-        const coef = (curr.currentQuantity * nbPerson) / forQuantity;
-        return {
-          prot: Number(prev.prot) + Number(curr.nutrionals.prot) * coef,
-          lipide: Number(prev.lipide) + Number(curr.nutrionals.lipide) * coef,
-        };
-      },
-      { prot: 0, lipide: 0 }
-    );
-  }
+  // const decrement = () => {
+  //   if (nbPerson <= 1) return;
+  //   setNbPerson((nb) => nb - 1);
+  // };
 
   return (
     <>
@@ -222,9 +186,9 @@ const RecipieDetails = ({ recipie, toClose }) => {
           ))}
 
           <div className="counter-container">
-            <AiFillMinusCircle onClick={decrement} />
+            <AiFillMinusCircle onClick={counterNbPerson.decrement} />
             <p>{nbPerson} Personne</p>
-            <BsPlusCircleFill onClick={increment} />
+            <BsPlusCircleFill onClick={counterNbPerson.increment} />
           </div>
         </div>
 
@@ -239,19 +203,9 @@ const RecipieDetails = ({ recipie, toClose }) => {
           >
             {recipie.process}
           </p>
-          {recNutrionalsValue ? (
-            <div className="nutrionals-value">
-              <h4>Valeur nutrionelle</h4>
-              <ul>
-                <li>Protéine: {recNutrionalsValue?.prot}g</li>
-                <li>Lipide: {recNutrionalsValue?.lipide}g</li>
-              </ul>
-            </div>
-          ) : (
-            <p>On a pas les infos sur tous les ingrédients</p>
-          )}
+          <NutrionalsValue ingredients={ingredients} nbPerson={nbPerson} />
 
-          <Button text="Do It" onClick={handleDoIt} />
+          <CookRecipie currentRecipie={currentRecipie} />
         </div>
       </div>
     </>

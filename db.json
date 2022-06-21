@@ -113,7 +113,7 @@
       "ingredients": {
         "1": {
           "name": "Roquefort",
-          "quantity": "200",
+          "quantity": -200,
           "unity": "g",
           "tag": "Fromage",
           "nutrionals": {
@@ -124,7 +124,7 @@
         },
         "2": {
           "name": "Tagliatelle",
-          "quantity": "500",
+          "quantity": -200,
           "unity": "g",
           "tag": "pasta",
           "nutrionals": {
@@ -132,6 +132,13 @@
             "prot": "20",
             "lipide": "30"
           }
+        },
+        "3": {
+          "name": "Crème Fraîche",
+          "quantity": 100,
+          "unity": "ml",
+          "tag": "Crème",
+          "nutrionals": {}
         }
       },
       "recipies": [

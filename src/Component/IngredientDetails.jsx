@@ -1,4 +1,7 @@
 import { useUserContext } from "../App";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import DropDown from "./DropDown";
+import DropDownItem from "./DropDownItem";
 
 const getSameIngredient = (userIngredients, ingredient) => {
   const sameIngredient = Object.values(userIngredients).filter((userIng) => {
@@ -22,12 +25,10 @@ const IngredientDetails = ({ ingredient, nbPerson }) => {
   const quantityIngredient = ingredient.quantity * nbPerson;
   let userGetEnough = false;
 
+  let userIng = getObjectByNames(userIngredients, ingredient.name);
   let nutrionalsValues;
-  if (ingredient.name === "Roquefort") {
-    nutrionalsValues = getObjectByNames(
-      userIngredients,
-      ingredient.name
-    ).nutrionals;
+  if (userIng?.nutrionals) {
+    nutrionalsValues = userIng.nutrionals;
   }
 
   if (sameIngredient.length > 0) {
@@ -37,18 +38,24 @@ const IngredientDetails = ({ ingredient, nbPerson }) => {
 
   return (
     <>
-      <ul className="ing">
-        <li>{ingredient.name}</li>
-        <li>{quantityIngredient}</li>
-        <li>{ingredient.unity}</li>
-        <li>{userGetEnough ? "V" : "X"}</li>
-      </ul>
-      {nutrionalsValues && (
+      <div className="ing-details-container">
         <ul className="ing">
-          <li>Protéine: {nutrionalsValues.prot}g</li>
-          <li>Lipide: {nutrionalsValues.lipide}g</li>
+          <li>{ingredient.name}</li>
+          <li>{quantityIngredient}</li>
+          <li>{ingredient.unity}</li>
+          <li>{userGetEnough ? "V" : "X"}</li>
         </ul>
-      )}
+        {nutrionalsValues && (
+          <DropDown title={<BsThreeDotsVertical />}>
+            <DropDownItem>
+              <p>Protéine: {nutrionalsValues.prot * nbPerson}g</p>
+            </DropDownItem>
+            <DropDownItem>
+              <p>Lipide: {nutrionalsValues.lipide * nbPerson}g</p>
+            </DropDownItem>
+          </DropDown>
+        )}
+      </div>
     </>
   );
 };
