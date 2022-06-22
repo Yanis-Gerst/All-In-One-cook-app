@@ -3,6 +3,7 @@ import Button from "./Button";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import DropDown from "./DropDown";
 import DropDownItem from "./DropDownItem";
+import NutrionalsDropDown from "./NutrionalsDropDown";
 
 const IngredientCard = ({
   ingredient,
@@ -14,7 +15,6 @@ const IngredientCard = ({
   const [ingredientConfig, setIngredientConfig] = useState(ingredient);
   const [quickAddValue, setQuickAddValue] = useState(100);
 
-  console.log(ingredientConfig);
   useEffect(() => {
     toUpdate({
       [index + 1]: ingredientConfig,
@@ -95,19 +95,31 @@ const IngredientCard = ({
       <div className="ing-header">
         <DropDown title={<BsThreeDotsVertical />}>
           <DropDownItem>
-            <input
-              type="number"
-              onChange={handleSetQuickAddValue}
-              value={quickAddValue}
-            />
+            <div className="dropdown-control">
+              <label>Ajout Rapide:</label>
+              <input
+                type="number"
+                onChange={handleSetQuickAddValue}
+                value={quickAddValue}
+              />
+            </div>
           </DropDownItem>
           <DropDownItem>
-            <input
-              type="number"
-              placeholder="prix au kilo..."
-              value={ingredientConfig.priceOnKilo || ""}
-              onChange={onInput}
-              name="priceOnKilo"
+            <div className="dropdown-control">
+              <label>Prix/kg: </label>
+              <input
+                type="number"
+                placeholder="prix au kilo..."
+                value={ingredientConfig.priceOnKilo || ""}
+                onChange={onInput}
+                name="priceOnKilo"
+              />
+            </div>
+          </DropDownItem>
+          <DropDownItem>
+            <NutrionalsDropDown
+              ingredient={ingredientConfig}
+              setIngredient={setIngredientConfig}
             />
           </DropDownItem>
         </DropDown>

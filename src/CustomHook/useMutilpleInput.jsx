@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useMultipleInputs = (initialsValue = {}) => {
-  const [state, setState] = useState({});
+  const [state, setState] = useState(initialsValue);
 
   const handleInputs = (e) => {
     //Need name in input Jsx

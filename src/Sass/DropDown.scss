@@ -9,5 +9,19 @@
     transform: translateX(50%);
     background-color: beige;
     padding: 10px;
+    display: flex;
+    flex-flow: column;
+    gap: 0.7em;
+    z-index: 10;
   }
+}
+
+.dropdown-control {
+  display: flex;
+}
+
+.nutrionals-inputs-container {
+  display: flex;
+  flex-flow: column;
+  gap: 0.4em;
 }

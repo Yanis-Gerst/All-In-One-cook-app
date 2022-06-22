@@ -12,7 +12,7 @@ const ContentEditable = ({
   return (
     <>
       <CustomTag
-        ContentEditable="true"
+        contentEditable="true"
         suppressContentEditableWarning={true}
         className={className}
         data-name={data}

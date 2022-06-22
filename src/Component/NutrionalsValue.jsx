@@ -39,6 +39,27 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
       { prot: 0, lipide: 0 }
     );
   }
+
+  //Money Component, createContext for allUserIngredient
+
+  let priceRec;
+
+  if (
+    allUserIngredients.every(
+      (value) => typeof value.priceOnKilo !== "undefined"
+    )
+  ) {
+    priceRec = allUserIngredients.reduce((prev, curr) => {
+      //Avoir le prix au gramme présent dans la recette
+      let currentPrice =
+        Math.round(
+          Number(curr.priceOnKilo) * (curr.currentQuantity / 1000) * 10
+        ) / 10;
+
+      return Math.round((prev + currentPrice) * 10) / 10;
+    }, 0);
+  }
+
   return (
     <>
       {recNutrionalsValue ? (
@@ -51,6 +72,14 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
         </div>
       ) : (
         <p>On a pas les infos sur tous les ingrédients</p>
+      )}
+
+      {priceRec ? (
+        <div className="price-container">
+          <p>Prix de la recette: {priceRec}€</p>
+        </div>
+      ) : (
+        <p>On a pas d'info sur le prix enfate</p>
       )}
     </>
   );

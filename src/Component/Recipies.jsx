@@ -5,11 +5,13 @@ import { useEffect, useState, createContext } from "react";
 import useToogle from "../CustomHook/useToogle";
 import { useUserContext } from "../App";
 import RecipiesHeader from "./RecipiesHeader";
+import { useNavigate } from "react-router-dom";
 
 export const RecipiesContext = createContext();
 
 const Recipies = () => {
   const user = useUserContext();
+  const naviguate = useNavigate();
   const [recipies, setRecipies] = useState(user.data.recipies);
   const [showForm, toogleShowForm] = useToogle(false);
   const [searchInput, setSearchInput] = useState("");
@@ -37,9 +39,10 @@ const Recipies = () => {
     );
   };
 
-  useEffect(() => {
-    user.setData({ ...user.data, recipies });
-  }, [recipies]);
+  if (!recipies) {
+    naviguate("/");
+    return;
+  }
 
   return (
     <>

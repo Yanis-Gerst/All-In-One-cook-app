@@ -113,34 +113,34 @@
       "ingredients": {
         "1": {
           "name": "Roquefort",
-          "quantity": 300,
+          "quantity": 400,
           "unity": "g",
           "tag": "Fromage",
           "nutrionals": {
-            "quantity": "100",
-            "prot": "20",
-            "lipide": "10"
-          }
+            "quantity": "100"
+          },
+          "priceOnKilo": "1"
         },
         "2": {
           "name": "Tagliatelle",
-          "quantity": 250,
+          "quantity": 400,
           "unity": "g",
           "tag": "pasta",
           "nutrionals": {
             "quantity": "100",
-            "prot": "20",
-            "lipide": "30"
+            "prot": "50",
+            "lipide": "10"
           },
-          "priceOnKilo": "",
+          "priceOnKilo": "1",
           "descriptions": "Desc..."
         },
         "3": {
           "name": "Crème Fraîche",
-          "quantity": 0,
+          "quantity": 300,
           "unity": "ml",
           "tag": "Crème",
-          "nutrionals": {}
+          "nutrionals": {},
+          "priceOnKilo": "1"
         }
       },
       "recipies": [

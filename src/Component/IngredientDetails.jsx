@@ -48,10 +48,10 @@ const IngredientDetails = ({ ingredient, nbPerson }) => {
         {nutrionalsValues && (
           <DropDown title={<BsThreeDotsVertical />}>
             <DropDownItem>
-              <p>Protéine: {nutrionalsValues.prot * nbPerson}g</p>
+              <p>Protéine: {nutrionalsValues.prot * nbPerson || "..."}g</p>
             </DropDownItem>
             <DropDownItem>
-              <p>Lipide: {nutrionalsValues.lipide * nbPerson}g</p>
+              <p>Lipide: {nutrionalsValues.lipide * nbPerson || "..."}g</p>
             </DropDownItem>
           </DropDown>
         )}
