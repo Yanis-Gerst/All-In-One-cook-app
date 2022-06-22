@@ -113,7 +113,7 @@
       "ingredients": {
         "1": {
           "name": "Roquefort",
-          "quantity": -200,
+          "quantity": 300,
           "unity": "g",
           "tag": "Fromage",
           "nutrionals": {
@@ -124,18 +124,20 @@
         },
         "2": {
           "name": "Tagliatelle",
-          "quantity": -200,
+          "quantity": 250,
           "unity": "g",
           "tag": "pasta",
           "nutrionals": {
             "quantity": "100",
             "prot": "20",
             "lipide": "30"
-          }
+          },
+          "priceOnKilo": "",
+          "descriptions": "Desc..."
         },
         "3": {
           "name": "Crème Fraîche",
-          "quantity": 100,
+          "quantity": 0,
           "unity": "ml",
           "tag": "Crème",
           "nutrionals": {}
@@ -170,7 +172,7 @@
           "id": 1654696378641,
           "undefined": " 15",
           "tag": "Pasta",
-          "null": "1. Faire cuire les pâtes\n2. Faire Fondre le roquefort + Ajouter de la crème \n3. Mélanger"
+          "null": "Pasta"
         },
         {
           "name": "Tacos 3 viande",
@@ -226,18 +228,6 @@
           "ingredients": {},
           "process": "",
           "id": 1654710360602
-        },
-        {
-          "name": "test",
-          "ingredients": {
-            "1": {
-              "name": "Roquefort",
-              "quantity": "200",
-              "unity": "g",
-              "nutrionals": {}
-            }
-          },
-          "id": 1655746802461
         }
       ],
       "id": 4

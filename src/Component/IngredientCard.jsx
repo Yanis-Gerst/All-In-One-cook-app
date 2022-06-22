@@ -14,6 +14,7 @@ const IngredientCard = ({
   const [ingredientConfig, setIngredientConfig] = useState(ingredient);
   const [quickAddValue, setQuickAddValue] = useState(100);
 
+  console.log(ingredientConfig);
   useEffect(() => {
     toUpdate({
       [index + 1]: ingredientConfig,
@@ -26,6 +27,13 @@ const IngredientCard = ({
     setIngredientConfig({
       ...ingredientConfig,
       [attrName]: e.target.textContent,
+    });
+  };
+
+  const onInput = (e) => {
+    setIngredientConfig({
+      ...ingredientConfig,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -93,6 +101,15 @@ const IngredientCard = ({
               value={quickAddValue}
             />
           </DropDownItem>
+          <DropDownItem>
+            <input
+              type="number"
+              placeholder="prix au kilo..."
+              value={ingredientConfig.priceOnKilo || ""}
+              onChange={onInput}
+              name="priceOnKilo"
+            />
+          </DropDownItem>
         </DropDown>
       </div>
       <h1
@@ -134,9 +151,7 @@ const IngredientCard = ({
           onBlur={onSubmit}
           onKeyPress={(e) => handleInput(e)}
         >
-          {ingredient.descriptions
-            ? ingredient.descriptions
-            : "Descriptions..."}
+          {ingredient.descriptions ? ingredient.descriptions : "Desc..."}
         </p>
       </div>
 

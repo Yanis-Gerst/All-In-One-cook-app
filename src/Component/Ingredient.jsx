@@ -5,19 +5,24 @@ import IngredientNutrionalForm from "./IngredientNutrionalForm";
 const Ingredient = ({ indexOfThis, addNewIngredient }) => {
   const [ingredientInput, handleIngredientInputs] = useMultipleInputs({});
   const [nutrionalsData, setNutrionalsData] = useState({});
+  //Handle default select input
+  const unity = ingredientInput.unity || "g";
   const ingredientData = {
-    [indexOfThis]: { ...ingredientInput, nutrionals: { ...nutrionalsData } },
+    [indexOfThis]: {
+      ...ingredientInput,
+      unity,
+      nutrionals: { ...nutrionalsData },
+    },
   };
 
   const toSubmit = () => {
-    console.log(ingredientData);
     addNewIngredient(ingredientData);
   };
   return (
     <>
       <h3>Ingrédient {indexOfThis}:</h3>
 
-      <form className="form-ingredient" onBlur={toSubmit}>
+      <form className="form-ingredient" id="ingredient-form" onBlur={toSubmit}>
         <div className="form-control">
           <label>Nom</label>
           <input
@@ -30,7 +35,7 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
         <div className="form-control">
           <label>Quantité</label>
           <input
-            type="text"
+            type="number"
             name="quantity"
             value={ingredientInput.quantity || ""}
             onChange={handleIngredientInputs}
@@ -38,12 +43,15 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
         </div>
         <div className="form-control">
           <label>Unité</label>
-          <input
-            type="text"
+          <select
             name="unity"
+            form="ingredient-form"
             value={ingredientInput.unity || ""}
             onChange={handleIngredientInputs}
-          />
+          >
+            <option value="g">g</option>
+            <option value="ml">ml</option>
+          </select>
         </div>
         <div className="form-control">
           <label>Tag</label>

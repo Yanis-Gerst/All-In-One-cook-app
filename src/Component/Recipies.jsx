@@ -1,12 +1,9 @@
-import Button from "./Button";
 import Recipie from "./Recipie";
 import Modale from "./Modale";
 import AddForm from "./AddForm";
-import SearchBar from "./SearchBar";
 import { useEffect, useState, createContext } from "react";
 import useToogle from "../CustomHook/useToogle";
 import { useUserContext } from "../App";
-import spatulaIcon from "../img/spatulaIcon.png";
 import RecipiesHeader from "./RecipiesHeader";
 
 export const RecipiesContext = createContext();
@@ -34,7 +31,6 @@ const Recipies = () => {
   const updateRecipie = async (updateRecipie) => {
     setRecipies(
       recipies.map((rec) => {
-        console.log(rec.id, updateRecipie.id);
         if (rec.id === updateRecipie.id) return updateRecipie;
         return rec;
       })

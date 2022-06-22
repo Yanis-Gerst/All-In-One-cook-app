@@ -87,7 +87,7 @@ const Fridge = () => {
                 />
               );
             } else {
-              if (!value.name.toLowerCase().includes(searchValue)) return;
+              if (!value.name?.toLowerCase().includes(searchValue)) return;
               return (
                 <IngredientCard
                   key={index}
