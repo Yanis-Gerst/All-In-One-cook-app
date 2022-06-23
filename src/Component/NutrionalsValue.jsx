@@ -8,6 +8,11 @@ const getSameIngredient = (userIngredients, ingredient) => {
   return sameIngredient;
 };
 
+const capitalize = (str) => {
+  const lower = str.toLowerCase();
+  return lower.charAt(0).toUpperCase() + lower.slice(1);
+};
+
 const NutrionalsValue = ({ ingredients, nbPerson }) => {
   const user = useUserContext();
 
@@ -20,9 +25,10 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
     }),
     [ingredients, user.data.ingredient]
   );
-  const nutrionalsIsNotDefine = allUserIngredients.some(
-    (userIng) => Object.keys(userIng.nutrionals).length > 0
-  );
+
+  const nutrionalsIsNotDefine = allUserIngredients.some((userIng) => {
+    return Object.keys(userIng.nutrionals).length === 0;
+  });
 
   let recNutrionalsValue;
   if (!nutrionalsIsNotDefine) {
@@ -31,12 +37,19 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
         if (!curr.nutrionals) return prev;
         const forQuantity = curr.nutrionals.quantity;
         const coef = (curr.currentQuantity * nbPerson) / forQuantity;
-        return {
-          prot: Number(prev.prot) + Number(curr.nutrionals.prot) * coef,
-          lipide: Number(prev.lipide) + Number(curr.nutrionals.lipide) * coef,
-        };
+        let sum = { ...prev };
+
+        Object.keys(sum).forEach((key) => {
+          if (curr.nutrionals.hasOwnProperty(key)) {
+            sum[key] += Number(curr.nutrionals[key]) * coef;
+          } else {
+            //Prevent false Value
+            sum[key] = undefined;
+          }
+        });
+        return sum;
       },
-      { prot: 0, lipide: 0 }
+      { proteine: 0, lipide: 0, calorie: 0 }
     );
   }
 
@@ -66,8 +79,22 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
         <div className="nutrionals-value">
           <h4>Valeur nutrionelle</h4>
           <ul>
-            <li>Protéine: {recNutrionalsValue?.prot}g</li>
-            <li>Lipide: {recNutrionalsValue?.lipide}g</li>
+            {Object.keys(recNutrionalsValue).map((nutrProprety) => {
+              if (!recNutrionalsValue[nutrProprety]) return;
+              if (nutrProprety === "calorie") {
+                return (
+                  <li key={nutrProprety}>
+                    {capitalize(nutrProprety)}{" "}
+                    {recNutrionalsValue[nutrProprety]}Kcal
+                  </li>
+                );
+              }
+              return (
+                <li key={nutrProprety}>
+                  {capitalize(nutrProprety)} {recNutrionalsValue[nutrProprety]}g
+                </li>
+              );
+            })}
           </ul>
         </div>
       ) : (

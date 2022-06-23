@@ -28,8 +28,8 @@ const IngredientNutrionalForm = ({ setNutrionalsData, handleBlur }) => {
         <label>Protéine</label>
         <input
           type="number"
-          name="prot"
-          value={nutrionalsInputs.prot || ""}
+          name="proteine"
+          value={nutrionalsInputs.proteine || ""}
           onChange={handleNutrionalsInputs}
         />
       </div>
@@ -39,6 +39,15 @@ const IngredientNutrionalForm = ({ setNutrionalsData, handleBlur }) => {
           type="number"
           name="lipide"
           value={nutrionalsInputs.lipide || ""}
+          onChange={handleNutrionalsInputs}
+        />
+      </div>
+      <div className="form-control">
+        <label>Calorie</label>
+        <input
+          type="number"
+          name="calorie"
+          value={nutrionalsInputs.calorie || ""}
           onChange={handleNutrionalsInputs}
         />
       </div>

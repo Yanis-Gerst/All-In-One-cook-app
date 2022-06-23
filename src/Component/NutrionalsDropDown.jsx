@@ -30,7 +30,7 @@ const NutrionalsDropDown = ({ ingredient, setIngredient }) => {
           type="number"
           name="prot"
           onChange={handleNutrInuput}
-          value={nutrInput.prot || ""}
+          value={nutrInput.proteine || ""}
         />
       </div>
       <div className="dropdown-control">
