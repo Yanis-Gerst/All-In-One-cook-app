@@ -5,6 +5,7 @@ import Recipies from "./Component/Recipies";
 import Register from "./Component/Register";
 import UserAccout from "./Component/UserData/UserAccout";
 import Fridge from "./Component/UserData/Fridge";
+import MealPanner from "./Component/MealPanner";
 // React
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState, createContext, useContext } from "react";
@@ -94,6 +95,7 @@ function App() {
                 )}
                 <Route exact path="/Register" element={<Register />} />
                 <Route exact path="/Fridge" element={<Fridge />} />
+                <Route exact path="/MealPlanner" element={<MealPanner />} />
               </Routes>
             </div>
           </IngredientsContext.Provider>

@@ -5,6 +5,7 @@ import IngredientNutrionalForm from "./IngredientNutrionalForm";
 const Ingredient = ({ indexOfThis, addNewIngredient }) => {
   const [ingredientInput, handleIngredientInputs] = useMultipleInputs({});
   const [nutrionalsData, setNutrionalsData] = useState({});
+  const [error, setError] = useState(false);
   //Handle default select input
   const unity = ingredientInput.unity || "g";
   const ingredientData = {
@@ -16,18 +17,26 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
   };
 
   const toSubmit = () => {
+    if (!ingredientInput.name || !ingredientInput.quantity) {
+      setError(true);
+      return;
+    }
+
+    if (error) setError(false);
     addNewIngredient(ingredientData);
   };
   return (
     <>
       <h3>Ingrédient {indexOfThis}:</h3>
 
+      {error && <p>Veuillez mettre un nom et une quantité</p>}
       <form className="form-ingredient" id="ingredient-form" onBlur={toSubmit}>
         <div className="form-control">
           <label>Nom</label>
           <input
             type="text"
             name="name"
+            className={error ? "error" : ""}
             value={ingredientInput.name || ""}
             onChange={handleIngredientInputs}
           />
@@ -37,6 +46,7 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
           <input
             type="number"
             name="quantity"
+            className={error ? "error" : ""}
             value={ingredientInput.quantity || ""}
             onChange={handleIngredientInputs}
           />

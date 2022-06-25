@@ -17,6 +17,13 @@ const Recipies = () => {
   const [searchInput, setSearchInput] = useState("");
   const searchValue = searchInput.toLocaleLowerCase();
 
+  useEffect(() => {
+    user.setData({
+      ...user.data,
+      recipies,
+    });
+  }, [recipies]);
+
   const addRecipie = async (recipie) => {
     setRecipies([...recipies, recipie]);
   };
@@ -30,7 +37,7 @@ const Recipies = () => {
     );
   };
 
-  const updateRecipie = async (updateRecipie) => {
+  const updateRecipie = (updateRecipie) => {
     setRecipies(
       recipies.map((rec) => {
         if (rec.id === updateRecipie.id) return updateRecipie;

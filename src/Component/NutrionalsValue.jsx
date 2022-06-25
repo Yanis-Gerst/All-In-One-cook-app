@@ -18,15 +18,18 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
 
   const allUserIngredients = useCallback(
     Object.values(ingredients).map((ing) => {
+      const sameIng = { ...getSameIngredient(user.data.ingredients, ing)[0] };
+      if (Object.keys(sameIng === 0)) return;
       return {
-        ...getSameIngredient(user.data.ingredients, ing)[0],
+        sameIng,
         currentQuantity: ing.quantity,
       };
     }),
     [ingredients, user.data.ingredient]
   );
-
+  console.log(allUserIngredients, "Here");
   const nutrionalsIsNotDefine = allUserIngredients.some((userIng) => {
+    if (!userIng) return true;
     return Object.keys(userIng.nutrionals).length === 0;
   });
 
@@ -58,9 +61,10 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
   let priceRec;
 
   if (
-    allUserIngredients.every(
-      (value) => typeof value.priceOnKilo !== "undefined"
-    )
+    allUserIngredients.every((value) => {
+      if (!value) return false;
+      return typeof value.priceOnKilo !== "undefined";
+    })
   ) {
     priceRec = allUserIngredients.reduce((prev, curr) => {
       //Avoir le prix au gramme présent dans la recette

@@ -22,13 +22,9 @@ const UserAccout = () => {
             key === "ingredients" ||
             key === "recipies" ||
             key === "id" ? null : (
-              <div className="data-container">
-                <p key={`${key}Pre`} data={`${key}-pre`}>
-                  {key}:
-                </p>
-                <p key={`${key}Body`} data={`${key}-body`}>
-                  {user.data[key]}
-                </p>
+              <div className="data-container" key={key}>
+                <p data={`${key}-pre`}>{key}:</p>
+                <p data={`${key}-body`}>{user.data[key]}</p>
                 {key === "password" && (
                   <Button text="Change Password" onClick={toogleShowPassForm} />
                 )}

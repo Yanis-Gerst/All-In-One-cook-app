@@ -48,6 +48,10 @@ const Header = () => {
           <CgSmartHomeRefrigerator className="header-icon" /> Fridge
         </Link>
         <div className="separator"></div>
+        <Link to="/MealPlanner">
+          <CgSmartHomeRefrigerator className="header-icon" /> MealPlanner
+        </Link>
+        <div className="separator"></div>
       </nav>
     </header>
   );

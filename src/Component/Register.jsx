@@ -55,7 +55,7 @@ const Register = () => {
     e.preventDefault();
     if (!samePassword || mailError) return;
     const id = Date.now() + Math.floor(Math.random() * 100);
-    setNewAccountInDb({ ...userConfig, id });
+    setNewAccountInDb({ ...userConfig, id, mealEvents: [] });
     resetInputs();
     naviguate("/Login");
   };

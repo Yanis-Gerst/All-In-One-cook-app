@@ -4,6 +4,7 @@ import { AiFillStar, AiOutlineStar, AiFillMinusCircle } from "react-icons/ai";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 import { BsPlusCircleFill, BsTag } from "react-icons/bs";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { RecipiesContext } from "./Recipies";
@@ -14,15 +15,14 @@ import IngredientDetails from "./IngredientDetails";
 import NutrionalsValue from "./NutrionalsValue";
 import CookRecipie from "./CookRecipie";
 import ContentEditable from "./ContentEditable";
-
-const gramToKilo = (gram) => gram / 100;
-const kiloToGram = (kilo) => kilo * 100;
+import DropDown from "./DropDown";
+import DropDownItem from "./DropDownItem";
 
 const RecipieDetails = ({ recipie, toClose }) => {
   const user = useUserContext();
   const [currentRecipie, setCurrentRecipie] = useState({ ...recipie });
   const [nbPerson, counterNbPerson] = useCounter(1, 1);
-
+  console.log(currentRecipie);
   const recipies = useContext(RecipiesContext);
   const ingredients = recipie.ingredients;
 
@@ -51,6 +51,16 @@ const RecipieDetails = ({ recipie, toClose }) => {
     }
   };
 
+  const handleManualNutr = (e) => {
+    setCurrentRecipie({
+      ...currentRecipie,
+      manualNutr: {
+        ...currentRecipie.manualNutr,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
   return (
     <>
       <div className="rec-detail-container">
@@ -59,6 +69,42 @@ const RecipieDetails = ({ recipie, toClose }) => {
             onClick={toClose}
             style={{ cursor: "pointer" }}
           />
+          <DropDown title={<BsThreeDotsVertical />}>
+            <h3>Def manuelle</h3>
+            <DropDownItem>
+              <div className="dropdown-control">
+                <label>Calories</label>
+                <input
+                  type="number"
+                  name="calorie"
+                  value={currentRecipie.manualNutr?.calorie || ""}
+                  onChange={handleManualNutr}
+                ></input>
+              </div>
+            </DropDownItem>
+            <DropDownItem>
+              <div className="dropdown-control">
+                <label>Proteine</label>
+                <input
+                  type="number"
+                  name="proteine"
+                  value={currentRecipie.manualNutr?.proteine || ""}
+                  onChange={handleManualNutr}
+                ></input>
+              </div>
+            </DropDownItem>
+            <DropDownItem>
+              <div className="dropdown-control">
+                <label>Lipide</label>
+                <input
+                  type="number"
+                  name="lipide"
+                  value={currentRecipie.manualNutr?.lipide || ""}
+                  onChange={handleManualNutr}
+                ></input>
+              </div>
+            </DropDownItem>
+          </DropDown>
           <Button
             text="Delete"
             className="btn-delete"

@@ -4,6 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import DropDown from "./DropDown";
 import DropDownItem from "./DropDownItem";
 import NutrionalsDropDown from "./NutrionalsDropDown";
+import ContentEditable from "./ContentEditable";
 
 const IngredientCard = ({
   ingredient,
@@ -124,47 +125,46 @@ const IngredientCard = ({
           </DropDownItem>
         </DropDown>
       </div>
-      <h1
-        suppressContentEditableWarning={true}
-        contentEditable
-        data-name="name"
+      <ContentEditable
+        data="name"
+        onKeyPress={handleInput}
         onBlur={onSubmit}
-        onKeyPress={(e) => handleInput(e)}
+        tagName="h1"
       >
         {ingredient.name}
-      </h1>
+      </ContentEditable>
+
       <div className="ing-meta-data">
         <p>Possède</p>
-        <p
-          suppressContentEditableWarning={true}
-          contentEditable
-          data-name="quantity"
+        <ContentEditable
+          data="quantity"
+          onKeyPress={handleInput}
           onBlur={onSubmit}
-          onKeyPress={(e) => handleInput(e)}
+          tagName="p"
         >
-          {ingredient.quantity}{" "}
-        </p>
-        <p
-          suppressContentEditableWarning={true}
-          contentEditable
-          data-name="unity"
+          {ingredient.quantity}
+        </ContentEditable>
+
+        <ContentEditable
+          data="unity"
+          onKeyPress={handleInput}
           onBlur={onSubmit}
-          onKeyPress={(e) => handleInput(e)}
+          tagName="p"
         >
           {ingredient.unity}
-        </p>
+        </ContentEditable>
       </div>
 
       <div className="ing-desc">
-        <p
-          suppressContentEditableWarning={true}
-          contentEditable
-          data-name="descriptions"
+        <ContentEditable
+          data="descriptions"
+          onKeyPress={handleInput}
           onBlur={onSubmit}
-          onKeyPress={(e) => handleInput(e)}
+          tagName="p"
         >
+          {" "}
           {ingredient.descriptions ? ingredient.descriptions : "Desc..."}
-        </p>
+        </ContentEditable>
       </div>
 
       <Button

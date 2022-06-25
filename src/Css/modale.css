@@ -44,9 +44,10 @@
   background-color: #fff;
 }
 
-.form-container input, .form-container textarea {
-  border: 1px solid #D0D3D4;
-  background-color: #FDFEFE;
+.form-container input,
+.form-container textarea {
+  border: 1px solid #d0d3d4;
+  background-color: #fdfefe;
   padding: 5px 10px;
   outline: none;
   border-radius: 3px;
@@ -55,7 +56,7 @@
 }
 
 .form-container label {
-  color: #EC7063;
+  color: #ec7063;
 }
 
 .form-container .icon-button {
@@ -99,5 +100,9 @@
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+}
+
+.error {
+  border: 1px solid red;
 }
 /*# sourceMappingURL=modale.css.map */
