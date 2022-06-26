@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useCounter from "../CustomHook/useCounter";
 import Ingredient from "./Ingredient";
 import Button from "./Button";
+import { AiOutlineClose } from "react-icons/ai";
 
 const AddIngredient = ({
   addAllIngredients,
@@ -39,10 +40,13 @@ const AddIngredient = ({
         />
       ))}
       <Button
-        text={"Add Ingrédient"}
+        text={"More Ingrédient"}
         onClick={setNumberOfIngredients.increment}
+        className="button-add"
       />
-      {toClose && <Button text={"Close"} onClick={handleClose} />}
+      {toClose && (
+        <AiOutlineClose onClick={handleClose} className="btn-close" />
+      )}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { CgSmartHomeRefrigerator } from "react-icons/cg";
 import { AiOutlineLogin, AiOutlineHome } from "react-icons/ai";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import spatulaIcon from "../img/spatulaIcon.png";
+import mealPlannerIcon from "../img/mealPlannerIcon.png";
 
 //Opti L'image
 const Header = () => {
@@ -32,6 +33,19 @@ const Header = () => {
           </>
         )}
         <div className="separator"></div>
+        <Link to="/MealPlanner">
+          <img
+            src={mealPlannerIcon}
+            alt="mealPlanner"
+            className="header-icon"
+          />{" "}
+          MealPlanner
+        </Link>
+        <div className="separator"></div>
+        <Link to="/Fridge">
+          <CgSmartHomeRefrigerator className="header-icon" /> Fridge
+        </Link>
+        <div className="separator"></div>
         {user.isConnected ? (
           <Link to={`${user.data.pseudo}`}>
             <MdOutlineAccountCircle className="header-icon" />
@@ -43,14 +57,7 @@ const Header = () => {
             Login
           </Link>
         )}
-        <div className="separator"></div>
-        <Link to="/Fridge">
-          <CgSmartHomeRefrigerator className="header-icon" /> Fridge
-        </Link>
-        <div className="separator"></div>
-        <Link to="/MealPlanner">
-          <CgSmartHomeRefrigerator className="header-icon" /> MealPlanner
-        </Link>
+
         <div className="separator"></div>
       </nav>
     </header>

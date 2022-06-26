@@ -10,6 +10,8 @@ import "./Css/Fridge.css";
 import "./Css/searchBar.css";
 import "./Css/header.css";
 import "./Css/DropDown.css";
+import "./Css/addIngredient.css";
+import "./Css/MealPlanner.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 

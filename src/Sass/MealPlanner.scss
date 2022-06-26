@@ -1,0 +1,29 @@
+.calendar-container > * {
+  padding-left: 2em;
+}
+
+//Header
+.calendar-header {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+}
+
+//Add Event Component
+.add-event-container {
+  display: flex;
+
+  gap: 0.8em;
+
+  input[type="text"] {
+    padding-left: 0.5em;
+    font-size: 1.1em;
+    outline: none;
+  }
+
+  .button-add {
+    height: fit-content;
+    padding: 5px 10px;
+    align-self: center;
+  }
+}

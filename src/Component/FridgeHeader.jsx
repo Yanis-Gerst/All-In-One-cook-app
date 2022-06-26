@@ -17,7 +17,11 @@ const FridgeHeader = ({ toogleAddForm, search }) => {
           />
         </div>
         <div className="search-bar">
-          <SearchBar value={search.state} toUpdate={search.setState} />
+          <SearchBar
+            value={search.state}
+            toUpdate={search.setState}
+            placeholder="Name or #Tag"
+          />
         </div>
       </div>
     </>

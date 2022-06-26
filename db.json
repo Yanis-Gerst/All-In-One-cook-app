@@ -126,12 +126,27 @@
           "title": "Test",
           "start": "2022-06-25T18:00:15.000Z",
           "end": "2022-06-25T18:59:15.000Z"
+        },
+        {
+          "start": "2022-06-27T10:00:30.000Z",
+          "end": "2022-06-27T10:00:30.000Z",
+          "title": "Riz"
+        },
+        {
+          "title": "",
+          "start": "",
+          "end": "2022-06-27T10:01:00.000Z"
+        },
+        {
+          "title": "Riz",
+          "start": "",
+          "end": "2022-06-27T10:00:00.000Z"
         }
       ],
       "ingredients": {
         "1": {
           "name": "Roquefort",
-          "quantity": "200",
+          "quantity": 500,
           "tag": "Fromage",
           "unity": "g",
           "nutrionals": {
@@ -139,11 +154,12 @@
             "proteine": "20",
             "lipide": "10",
             "calorie": "150"
-          }
+          },
+          "descriptions": "Fromage Fort. Top Tier pours les sauces"
         },
         "2": {
           "name": "Crème Fraîche",
-          "quantity": "300",
+          "quantity": 500,
           "tag": "Crème",
           "unity": "g",
           "nutrionals": {
@@ -151,11 +167,12 @@
             "proteine": "10",
             "lipide": "20",
             "calorie": "50"
-          }
+          },
+          "descriptions": "Crème Top Tier pour les sauces"
         },
         "3": {
           "name": "Tagliatelle",
-          "quantity": "300",
+          "quantity": 800,
           "tag": "Pates",
           "unity": "g",
           "nutrionals": {
@@ -163,7 +180,8 @@
             "proteine": "20",
             "lipide": "30",
             "calorie": "200"
-          }
+          },
+          "descriptions": "Pâtes qui va bien aves les sauces à base de fromage"
         }
       },
       "recipies": [

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { MdDelete } from "react-icons/md";
+import { GrFormAdd } from "react-icons/gr";
 import DropDown from "./DropDown";
 import DropDownItem from "./DropDownItem";
 import NutrionalsDropDown from "./NutrionalsDropDown";
@@ -96,6 +98,13 @@ const IngredientCard = ({
       <div className="ing-header">
         <DropDown title={<BsThreeDotsVertical />}>
           <DropDownItem>
+            <Button
+              className="btn-delete"
+              onClick={() => toDelete(index)}
+              icon={() => <MdDelete />}
+            />
+          </DropDownItem>
+          <DropDownItem>
             <div className="dropdown-control">
               <label>Ajout Rapide:</label>
               <input
@@ -135,7 +144,6 @@ const IngredientCard = ({
       </ContentEditable>
 
       <div className="ing-meta-data">
-        <p>Possède</p>
         <ContentEditable
           data="quantity"
           onKeyPress={handleInput}
@@ -163,17 +171,11 @@ const IngredientCard = ({
           tagName="p"
         >
           {" "}
-          {ingredient.descriptions ? ingredient.descriptions : "Desc..."}
+          {ingredient.descriptions ? ingredient.descriptions : "..."}
         </ContentEditable>
       </div>
 
-      <Button
-        className="btn-ing-detail"
-        text="Delete"
-        onClick={() => toDelete(index)}
-      />
-
-      <Button text={"quickAdd"} onClick={doQuickAdd} />
+      <GrFormAdd className="btn-quick-add" onClick={doQuickAdd} />
     </div>
   );
 };

@@ -1,0 +1,52 @@
+.add-ing-header {
+  display: flex;
+  flex-flow: column;
+  gap: 0.3em;
+  margin-bottom: 0.5em;
+}
+.add-ingredient-container {
+  background-color: rgb(251, 251, 251);
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+
+  input {
+    padding: 0.3em;
+  }
+
+  .nutr {
+    margin-top: 0.7em;
+    border-top: 1px solid #dbdbdb;
+    padding: 10px 0;
+  }
+}
+
+.text-error {
+  color: rgb(238, 3, 3);
+}
+
+.button-add {
+  border-radius: 5px;
+  border: none;
+  background-color: #f7dc6f;
+  color: #373737;
+  padding: 0.3em 0.5em;
+  border: 1px solid #333;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-close {
+  cursor: pointer;
+  font-size: 1.2em;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}

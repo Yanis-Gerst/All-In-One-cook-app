@@ -14,6 +14,11 @@ const locales = {
   fr: require("date-fns/locale/fr"),
 };
 
+const calendarStyle = {
+  height: "70vh",
+  width: "80vw",
+};
+
 const localizer = dateFnsLocalizer({
   format,
   parse,
@@ -21,14 +26,6 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 });
-
-const events = [
-  {
-    title: "Pâtes au bleu",
-    start: new Date(2022, 5, 24, 2),
-    end: new Date(2022, 5, 24, 3),
-  },
-];
 
 const MealPanner = () => {
   const user = useUserContext();
@@ -45,15 +42,16 @@ const MealPanner = () => {
   return (
     <>
       <div className="calendar-container">
-        <h1>Meal Planner</h1>
-        <h2>Add new Event</h2>
-        <AddEvent addEvent={addMealEvent} />
+        <div className="calendar-header">
+          <h1>Meal Planner</h1>
+          <AddEvent addEvent={addMealEvent} />
+        </div>
         <Calendar
           localizer={localizer}
           events={mealEvents}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: "80vh" }}
+          style={calendarStyle}
         />
       </div>
     </>

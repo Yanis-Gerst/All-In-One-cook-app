@@ -22,7 +22,7 @@ nav {
   flex-flow: column;
   align-items: center;
   justify-content: space-evenly;
-  flex-basis: 40%;
+  flex-basis: 50%;
   width: 100%;
 }
 
@@ -52,6 +52,7 @@ nav a {
   background-color: #28282b;
   margin-right: auto;
   width: 90%;
+  z-index: 10;
 }
 
 .icon-container {

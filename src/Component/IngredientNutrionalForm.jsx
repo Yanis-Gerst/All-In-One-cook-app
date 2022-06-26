@@ -14,7 +14,7 @@ const IngredientNutrionalForm = ({ setNutrionalsData, handleBlur }) => {
   }, [nutrionalsInputs]);
 
   return (
-    <form className="form-ingredient" onBlur={handleBlur}>
+    <form className="form-ingredient nutr" onBlur={handleBlur}>
       <div className="form-control">
         <label>Pour en g:</label>
         <input

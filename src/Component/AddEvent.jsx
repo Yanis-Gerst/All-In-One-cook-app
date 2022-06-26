@@ -1,6 +1,4 @@
 import { useState } from "react";
-import useMultipleInputs from "../CustomHook/useMutilpleInput";
-import DatePicker from "react-datepicker";
 import { TextField } from "@mui/material";
 import { DesktopDateTimePicker } from "@mui/x-date-pickers";
 import "react-datetime-picker/dist/DateTimePicker.css";
@@ -41,7 +39,11 @@ const AddEvent = ({ addEvent }) => {
           renderInput={(params) => <TextField {...params} />}
         />
       </LocalizationProvider>
-      <Button text="Add Meal Event" onClick={handleClick} />
+      <Button
+        text="Add Meal Event"
+        onClick={handleClick}
+        className="button-add"
+      />
     </div>
   );
 };

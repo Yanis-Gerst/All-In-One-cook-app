@@ -27,9 +27,13 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
   };
   return (
     <>
-      <h3>Ingrédient {indexOfThis}:</h3>
+      <div className="add-ing-header">
+        <h3>Ingrédient {indexOfThis}:</h3>
 
-      {error && <p>Veuillez mettre un nom et une quantité</p>}
+        {error && (
+          <p className="text-error">Veuillez mettre un nom et une quantité</p>
+        )}
+      </div>
       <form className="form-ingredient" id="ingredient-form" onBlur={toSubmit}>
         <div className="form-control">
           <label>Nom</label>

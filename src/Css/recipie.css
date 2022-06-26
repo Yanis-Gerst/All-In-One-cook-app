@@ -1,5 +1,6 @@
 .recipies-container,
-.fridge-container {
+.fridge-container,
+.calendar-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

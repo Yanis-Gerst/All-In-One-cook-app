@@ -1,0 +1,38 @@
+.calendar-container > * {
+  padding-left: 2em;
+}
+
+.calendar-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 1em;
+}
+
+.add-event-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.8em;
+}
+
+.add-event-container input[type="text"] {
+  padding-left: 0.5em;
+  font-size: 1.1em;
+  outline: none;
+}
+
+.add-event-container .button-add {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 5px 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=MealPlanner.css.map */

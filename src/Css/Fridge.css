@@ -6,9 +6,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  gap: 50%;
 }
 
 .fridge-header .header-left {
@@ -29,9 +27,21 @@
   border: 1px solid #333;
   border-radius: 5px;
   padding: 1em;
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
   background-color: var(--fridge-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 0.5em;
+}
+
+.ing-card h1 {
+  line-height: 90%;
 }
 
 .ing-card p {
@@ -46,6 +56,39 @@
   outline: 1px solid #424949;
   background-color: #d5f0fa;
   border-radius: 5px;
+}
+
+.ing-card .btn-delete {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin-left: auto;
+}
+
+.ing-card .btn-quick-add {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 1.1em;
+  position: absolute;
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.ing-card .btn-quick-add:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.ing-card .btn-quick-add:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 .ing-meta-data {

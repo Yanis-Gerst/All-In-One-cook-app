@@ -21,7 +21,8 @@ const UserAccout = () => {
           const elem =
             key === "ingredients" ||
             key === "recipies" ||
-            key === "id" ? null : (
+            key === "id" ||
+            key === "mealEvents" ? null : (
               <div className="data-container" key={key}>
                 <p data={`${key}-pre`}>{key}:</p>
                 <p data={`${key}-body`}>{user.data[key]}</p>
