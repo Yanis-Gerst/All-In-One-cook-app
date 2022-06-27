@@ -146,7 +146,7 @@
       "ingredients": {
         "1": {
           "name": "Roquefort",
-          "quantity": 500,
+          "quantity": "500",
           "tag": "Fromage",
           "unity": "g",
           "nutrionals": {
@@ -155,11 +155,11 @@
             "lipide": "10",
             "calorie": "150"
           },
-          "descriptions": "Fromage Fort. Top Tier pours les sauces"
+          "descriptions": "      Fromage Fort. Top Tier pours les sauces"
         },
         "2": {
           "name": "Crème Fraîche",
-          "quantity": 500,
+          "quantity": "500",
           "tag": "Crème",
           "unity": "g",
           "nutrionals": {
@@ -168,11 +168,11 @@
             "lipide": "20",
             "calorie": "50"
           },
-          "descriptions": "Crème Top Tier pour les sauces"
+          "descriptions": "  Crème Top Tier pour les sauces"
         },
         "3": {
           "name": "Tagliatelle",
-          "quantity": 800,
+          "quantity": "800",
           "tag": "Pates",
           "unity": "g",
           "nutrionals": {
@@ -181,7 +181,7 @@
             "lipide": "30",
             "calorie": "200"
           },
-          "descriptions": "Pâtes qui va bien aves les sauces à base de fromage"
+          "descriptions": "   Pâtes qui va bien aves les sauces à base de fromage"
         }
       },
       "recipies": [

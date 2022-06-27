@@ -10,6 +10,16 @@
   margin-bottom: 0.5em;
 }
 
+.form-ingredient {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
 .add-ingredient-container {
   background-color: #fbfbfb;
   border: 1px solid #333;

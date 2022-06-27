@@ -15,6 +15,7 @@ header {
       flex-basis: 15%;
   background-color: var(--sidebar-bg);
   height: 100vh;
+  position: relative;
 }
 
 header img {
@@ -99,5 +100,24 @@ nav a:hover {
 
 .header-icon {
   width: 30px;
+}
+
+.not-visual {
+  position: absolute;
+  left: 0;
+  top: 1%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #fbeee6;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.not-visual:focus {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 /*# sourceMappingURL=header.css.map */

@@ -4,6 +4,11 @@
   gap: 0.3em;
   margin-bottom: 0.5em;
 }
+
+.form-ingredient {
+  display: flex;
+  flex-flow: row wrap;
+}
 .add-ingredient-container {
   background-color: rgb(251, 251, 251);
   border: 1px solid #333;
@@ -50,3 +55,5 @@
   top: 10px;
   right: 20px;
 }
+
+//Put on another file

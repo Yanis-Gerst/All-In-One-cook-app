@@ -7,6 +7,7 @@ import DropDown from "./DropDown";
 import DropDownItem from "./DropDownItem";
 import NutrionalsDropDown from "./NutrionalsDropDown";
 import ContentEditable from "./ContentEditable";
+import { arrowNaviguation } from "./Recipies";
 
 const IngredientCard = ({
   ingredient,
@@ -53,6 +54,8 @@ const IngredientCard = ({
     setQuickAddValue(e.target.value);
   };
 
+  const handleArrowShortCut = arrowNaviguation(".ing-card", index);
+
   const handleInput = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -94,7 +97,11 @@ const IngredientCard = ({
       onDragEnter={onCardDragEnter}
       onDragLeave={onCardDragLeave}
       data-index={Number(index)}
+      aria-label={`Your ingredient ${ingredientConfig.name}`}
+      tabIndex="0"
+      onKeyDown={handleArrowShortCut}
     >
+      <GrFormAdd className="btn-quick-add" onClick={doQuickAdd} tabIndex="0" />
       <div className="ing-header">
         <DropDown title={<BsThreeDotsVertical />}>
           <DropDownItem>
@@ -174,8 +181,6 @@ const IngredientCard = ({
           {ingredient.descriptions ? ingredient.descriptions : "..."}
         </ContentEditable>
       </div>
-
-      <GrFormAdd className="btn-quick-add" onClick={doQuickAdd} />
     </div>
   );
 };

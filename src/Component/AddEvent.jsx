@@ -16,28 +16,38 @@ const AddEvent = ({ addEvent }) => {
 
   return (
     <div className="add-event-container">
-      <input
-        type="text"
-        name="title"
-        placeholder="Add Title"
-        onChange={(e) =>
-          setNewEvent({ ...event, [e.target.name]: e.target.value })
-        }
-        value={event.title || ""}
-      />
+      <label>
+        Add Title:
+        <input
+          id="main"
+          type="text"
+          name="title"
+          placeholder="Add Title"
+          onChange={(e) =>
+            setNewEvent({ ...event, [e.target.name]: e.target.value })
+          }
+          value={event.title || ""}
+        />
+      </label>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DesktopDateTimePicker
-          placeholderText="Start Date"
-          value={event.start}
-          onChange={(start) => setNewEvent({ ...event, start })}
-          renderInput={(params) => <TextField {...params} />}
-        />
-        <DesktopDateTimePicker
-          placeholderText="End Date"
-          value={event.end}
-          onChange={(end) => setNewEvent({ ...event, end })}
-          renderInput={(params) => <TextField {...params} />}
-        />
+        <label>
+          Pick a Start Date
+          <DesktopDateTimePicker
+            placeholderText="Start Date"
+            value={event.start}
+            onChange={(start) => setNewEvent({ ...event, start })}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </label>
+        <label>
+          Pick an End Date
+          <DesktopDateTimePicker
+            placeholderText="End Date"
+            value={event.end}
+            onChange={(end) => setNewEvent({ ...event, end })}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </label>
       </LocalizationProvider>
       <Button
         text="Add Meal Event"

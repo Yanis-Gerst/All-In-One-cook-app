@@ -7,6 +7,27 @@ import { useUserContext } from "../App";
 import RecipiesHeader from "./RecipiesHeader";
 import { useNavigate } from "react-router-dom";
 
+export const arrowNaviguation = (className, index) => {
+  const handleArrowNaviguation = (e) => {
+    if (e.key === "ArrowRight") {
+      const allCard = document.querySelectorAll(className);
+      if (index + 1 >= allCard.length) {
+        allCard[0].focus();
+        return;
+      }
+      allCard[index + 1].focus();
+    } else if (e.key === "ArrowLeft") {
+      const allCard = document.querySelectorAll(className);
+      if (index - 1 < 0) {
+        allCard[allCard.length - 1].focus();
+        return;
+      }
+      allCard[index - 1].focus();
+    }
+  };
+  return handleArrowNaviguation;
+};
+
 export const RecipiesContext = createContext();
 
 const Recipies = () => {
@@ -67,12 +88,12 @@ const Recipies = () => {
             toogleShowForm={toogleShowForm}
           />
           <div className="rec-container">
-            {recipies.map((rec) => {
+            {recipies.map((rec, index) => {
               if (searchValue.includes("#")) {
                 const tagInput = searchValue.replace("#", "");
                 if (!rec.tag?.toLocaleLowerCase().includes(tagInput)) return;
 
-                return <Recipie key={rec.name} recipie={rec} />;
+                return <Recipie key={rec.name} recipie={rec} index={index} />;
               } else {
                 if (!rec.name.toLowerCase().includes(searchValue)) {
                   return;

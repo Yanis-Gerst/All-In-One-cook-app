@@ -7,6 +7,7 @@ header {
   flex-basis: 15%;
   background-color: var(--sidebar-bg);
   height: 100vh;
+  position: relative;
   img {
     width: 30px;
     height: 30px;
@@ -66,4 +67,20 @@ nav a {
 
 .header-icon {
   width: 30px;
+}
+
+//Accesibility
+
+.not-visual {
+  position: absolute;
+  left: 0;
+  top: 1%;
+  height: min-content;
+  background-color: #fbeee6;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+
+  &:focus {
+    transform: translateX(0);
+  }
 }

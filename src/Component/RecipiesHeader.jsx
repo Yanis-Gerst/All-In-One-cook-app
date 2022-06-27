@@ -11,7 +11,7 @@ const RecipiesHeader = ({ toogleShowForm, searchInput, setSearchInput }) => {
       <div className="header-left">
         <img src={spatulaIcon} />
         <h1>Your Recipies</h1>
-        <Button text="Add" onClick={toogleShowForm} />
+        <Button text="Add" id="main" onClick={toogleShowForm} />
       </div>
       <div className="header-right">
         <SearchBar toUpdate={setSearchInput} value={searchInput} />

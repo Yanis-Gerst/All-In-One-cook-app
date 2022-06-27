@@ -20,6 +20,9 @@ const Header = () => {
 
       <nav>
         <h4 className="header-tag">Menu</h4>
+        <a className="not-visual" href="#main" tabIndex="0">
+          Skip to Main Content
+        </a>
         <Link to="/">
           <AiOutlineHome className="header-icon" /> Home
         </Link>

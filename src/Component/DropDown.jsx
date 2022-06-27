@@ -1,7 +1,7 @@
 import useToogle from "../CustomHook/useToogle";
 import { cloneElement, useRef } from "react";
 import { useEffect } from "react";
-import Modale from "./Modale";
+
 const DropDown = ({ children, title }) => {
   const [showMenu, toogleShowMenu] = useToogle(false);
   const [byBlur, toogleByBlur] = useToogle(false);
@@ -30,7 +30,7 @@ const DropDown = ({ children, title }) => {
 
   return (
     <>
-      <div className="dropdown-container">
+      <div className="dropdown-container" tabIndex={"0"}>
         <div
           className="dropdown-title"
           onClick={handleClick}

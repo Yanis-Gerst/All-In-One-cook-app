@@ -17,9 +17,10 @@
 
 .form-container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  width: 50%;
+  border: 1px solid #333;
+  width: 70%;
   padding: 20px;
-  flex-basis: 60%;
+  flex-basis: 80%;
   border-radius: 5px;
   display: flex;
   flex-flow: column;

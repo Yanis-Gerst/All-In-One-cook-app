@@ -23,6 +23,9 @@ const AddForm = ({ toClose }) => {
 
   return (
     <div className="form-container">
+      <div className="form-header">
+        <h1>Test</h1>
+      </div>
       <form>
         <div className="form-control">
           <label>Nom de la recette:</label>
