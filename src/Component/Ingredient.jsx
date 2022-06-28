@@ -8,16 +8,18 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
   const [error, setError] = useState(false);
   //Handle default select input
   const unity = ingredientInput.unity || "g";
+  const quantity = ingredientInput.quantity || 0;
   const ingredientData = {
     [indexOfThis]: {
       ...ingredientInput,
       unity,
+      quantity,
       nutrionals: { ...nutrionalsData },
     },
   };
 
   const toSubmit = () => {
-    if (!ingredientInput.name || !ingredientInput.quantity) {
+    if (!ingredientInput.name) {
       setError(true);
       return;
     }
@@ -30,9 +32,7 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
       <div className="add-ing-header">
         <h3>Ingrédient {indexOfThis}:</h3>
 
-        {error && (
-          <p className="text-error">Veuillez mettre un nom et une quantité</p>
-        )}
+        {error && <p className="text-error">Veuillez mettre un nom </p>}
       </div>
       <form className="form-ingredient" id="ingredient-form" onBlur={toSubmit}>
         <div className="form-control">
@@ -52,8 +52,7 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
             id="quantity"
             type="number"
             name="quantity"
-            className={error ? "error" : ""}
-            value={ingredientInput.quantity || ""}
+            value={ingredientInput.quantity || 0}
             onChange={handleIngredientInputs}
           />
         </div>

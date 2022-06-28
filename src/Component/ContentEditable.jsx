@@ -1,10 +1,12 @@
 import React from "react";
 
 const ContentEditable = ({
-  className,
-  data,
+  className = "",
+  data = "",
   onBlur,
-  onKeyPress,
+  onKeyPress = (e) => {
+    if (e.key === "Enter") e.target.blur();
+  },
   tagName = "div",
   children,
 }) => {

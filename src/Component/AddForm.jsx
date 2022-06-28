@@ -41,11 +41,16 @@ const AddForm = ({ toClose }) => {
   return (
     <div className="form-container">
       <div className="form-header">
-        <h1>Test</h1>
-      </div>
-      <form>
+        <input
+          type="submit"
+          value="add Recipies"
+          className="submit-btn"
+          onClick={onSubmit}
+          onKeyDown={handleTabLastToFirst}
+          ref={lastToFocus}
+        />
         <button
-          className="icon-button"
+          className="add-form-btn-close"
           onClick={toClose}
           aria-label={"A button to close Modale"}
           onKeyDown={handleTabFirstToLast}
@@ -53,6 +58,8 @@ const AddForm = ({ toClose }) => {
         >
           <IoIosClose />
         </button>
+      </div>
+      <form>
         <div className="form-control">
           <label for="recipe-name">Nom de la recette:</label>
           <input
@@ -148,15 +155,6 @@ const AddForm = ({ toClose }) => {
       </form>
 
       <AddIngredient addAllIngredients={addAllIngredients} />
-
-      <input
-        type="submit"
-        value="add Recipies"
-        className="submit-btn"
-        onClick={onSubmit}
-        onKeyDown={handleTabLastToFirst}
-        ref={lastToFocus}
-      />
     </div>
   );
 };

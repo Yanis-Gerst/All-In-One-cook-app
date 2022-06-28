@@ -10,7 +10,8 @@ const AddEvent = ({ addEvent }) => {
   const [event, setNewEvent] = useState({});
 
   const handleClick = () => {
-    addEvent(event);
+    const id = Date.now() + Math.floor(Math.random() * 100);
+    addEvent({ ...event, id });
     setNewEvent({ title: "", start: "", end: "" });
   };
 

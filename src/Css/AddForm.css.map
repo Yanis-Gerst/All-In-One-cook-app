@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,QAAQ,EAAE,MAAM;EAChB,GAAG,EAAE,CAAC;CACP",
     "sources": [
         "../Sass/AddForm.scss"
     ],
