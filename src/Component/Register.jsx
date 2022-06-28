@@ -67,6 +67,7 @@ const Register = () => {
         <form className="reg-form">
           <div className="form-control">
             <input
+              aria-label="Your Pseudo"
               type="text"
               name="pseudo"
               value={userInputs.pseudo || ""}
@@ -77,6 +78,7 @@ const Register = () => {
 
           <div className="form-control">
             <input
+              aria-label="Your e-mail"
               type="mail"
               name="mail"
               value={userInputs.mail || ""}
@@ -89,6 +91,7 @@ const Register = () => {
 
           <div className="form-control">
             <input
+              aria-label="Your password"
               type="text"
               name="password"
               value={userInputs.password || ""}
@@ -99,6 +102,7 @@ const Register = () => {
 
           <div className="form-control">
             <input
+              aria-label="Confirm your password"
               type="text"
               name="passwordConfirme"
               value={userInputs.passwordConfirme || ""}

@@ -7,10 +7,7 @@ import { arrowNaviguation } from "./Recipies";
 const Recipie = ({ recipie, index }) => {
   const [showDetail, toogleShowDetail] = useToogle(false);
 
-  const handleArrowShortCut = arrowNaviguation(".rec", index);
-
   const handleKeyShortcut = (e) => {
-    handleArrowShortCut();
     if (e.key === "Enter") {
       toogleShowDetail();
     }
@@ -37,7 +34,12 @@ const Recipie = ({ recipie, index }) => {
       </div>
       <div className="rec-img-container">
         {recipie.urlImage && (
-          <img rel="preload" as="image" src={recipie.urlImage} />
+          <img
+            rel="preload"
+            as="image"
+            src={recipie.urlImage}
+            alt={recipie.name}
+          />
         )}
       </div>
 

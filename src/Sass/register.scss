@@ -69,6 +69,11 @@
       left: 0px;
     }
 
+    &:focus::after {
+      top: 0px;
+      left: 0px;
+    }
+
     &:active {
       transform: scale(0.98);
     }

@@ -100,6 +100,12 @@
   left: 0px;
 }
 
+.login-form .btn-login:focus::after,
+.reg-form .btn-login:focus::after {
+  top: 0px;
+  left: 0px;
+}
+
 .login-form .btn-login:active,
 .reg-form .btn-login:active {
   -webkit-transform: scale(0.98);

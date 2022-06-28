@@ -62,6 +62,7 @@ const Login = ({}) => {
 
         <div className="form-control">
           <input
+            aria-label="Your e-mail"
             type="text"
             name="mail"
             value={userInputs.mail || ""}
@@ -73,6 +74,7 @@ const Login = ({}) => {
 
         <div className="form-control">
           <input
+            aria-label="Your Password"
             type="password"
             name="password"
             value={userInputs.password || ""}

@@ -1,12 +1,12 @@
-import React from 'react'
-import { IoIosClose } from "react-icons/io"
+import React from "react";
+import { IoIosClose } from "react-icons/io";
 
-const IconButton = ({onClick}) => {
+const IconButton = ({ onClick, label = "" }) => {
   return (
-    <div className="icon-button" onClick={onClick} >
-        <IoIosClose/>
-    </div>
-  )
-}
+    <button className="icon-button" onClick={onClick} aria-label={label}>
+      <IoIosClose />
+    </button>
+  );
+};
 
-export default IconButton
+export default IconButton;

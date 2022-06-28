@@ -36,8 +36,9 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
       </div>
       <form className="form-ingredient" id="ingredient-form" onBlur={toSubmit}>
         <div className="form-control">
-          <label>Nom</label>
+          <label htmlFor="ingredient-name">Nom</label>
           <input
+            id="ingredient-name"
             type="text"
             name="name"
             className={error ? "error" : ""}
@@ -46,8 +47,9 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
           />
         </div>
         <div className="form-control">
-          <label>Quantité</label>
+          <label htmlFor="quantity">Quantité</label>
           <input
+            id="quantity"
             type="number"
             name="quantity"
             className={error ? "error" : ""}
@@ -56,8 +58,9 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
           />
         </div>
         <div className="form-control">
-          <label>Unité</label>
+          <label htmlFor="unity">Unité</label>
           <select
+            id="unity"
             name="unity"
             form="ingredient-form"
             value={ingredientInput.unity || ""}
@@ -68,8 +71,9 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
           </select>
         </div>
         <div className="form-control">
-          <label>Tag</label>
+          <label htmlFor="ingredient-tag">Tag</label>
           <input
+            id="ingredient-tag"
             type="text"
             name="tag"
             value={ingredientInput.tag || ""}

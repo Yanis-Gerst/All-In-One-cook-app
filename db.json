@@ -79,7 +79,7 @@
               "unity": "ml"
             }
           },
-          "process": "1. Prend ton tél\n2. TACOS MAN ",
+          "process": "1. Prend ton tél\n2. TACOS MAN",
           "id": 1654696466482
         },
         {
@@ -146,42 +146,13 @@
       "ingredients": {
         "1": {
           "name": "Roquefort",
-          "quantity": "500",
-          "tag": "Fromage",
+          "quantity": 500,
           "unity": "g",
           "nutrionals": {
             "quantity": "100",
-            "proteine": "20",
-            "lipide": "10",
-            "calorie": "150"
-          },
-          "descriptions": "      Fromage Fort. Top Tier pours les sauces"
-        },
-        "2": {
-          "name": "Crème Fraîche",
-          "quantity": "500",
-          "tag": "Crème",
-          "unity": "g",
-          "nutrionals": {
-            "quantity": "100",
-            "proteine": "10",
-            "lipide": "20",
-            "calorie": "50"
-          },
-          "descriptions": "  Crème Top Tier pour les sauces"
-        },
-        "3": {
-          "name": "Tagliatelle",
-          "quantity": "800",
-          "tag": "Pates",
-          "unity": "g",
-          "nutrionals": {
-            "quantity": "100",
-            "proteine": "20",
-            "lipide": "30",
-            "calorie": "200"
-          },
-          "descriptions": "   Pâtes qui va bien aves les sauces à base de fromage"
+            "prot": "3",
+            "lipide": "20"
+          }
         }
       },
       "recipies": [

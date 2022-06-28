@@ -30,7 +30,7 @@ const Header = () => {
           <>
             <div className="separator" />
             <Link to="/Recipies">
-              <img src={spatulaIcon} className="header-icon" />
+              <img src={spatulaIcon} className="header-icon" alt="a spatula" />
               Recipies
             </Link>
           </>

@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import { cloneElement } from "react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Modale = ({ children, toClose }) => {
   const newChildren = cloneElement(children, { toClose });
