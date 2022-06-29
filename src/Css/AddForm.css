@@ -5,8 +5,36 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  background-color: var(--sidebar-bg);
+  outline: 1px solid #444;
+  margin: 0 -20px;
+  padding: 10px;
+}
+
+.add-form-btn-close {
+  background: none;
+  border: none;
+  font-size: 2em;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  cursor: pointer;
+}
+
+.add-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 1em;
 }
 /*# sourceMappingURL=AddForm.css.map */

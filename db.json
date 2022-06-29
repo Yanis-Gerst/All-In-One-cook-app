@@ -113,23 +113,19 @@
       "password": "aze",
       "mealEvents": [
         {
-          "title": "Tg",
-          "start": "2022-06-30T10:30:00.000Z",
-          "end": "2022-06-30T11:34:00.000Z",
-          "id": 1656428265604
+          "end": "2022-06-29T00:30:00.000Z",
+          "start": "2022-06-28T23:30:00.000Z",
+          "duration": "1",
+          "id": 1656495161320
         }
       ],
       "ingredients": {
         "1": {
           "name": "Roquefort",
-          "quantity": 500,
+          "quantity": "200",
+          "tag": "Fromage",
           "unity": "g",
-          "nutrionals": {
-            "quantity": "100",
-            "prot": "3",
-            "lipide": "20"
-          },
-          "descriptions": " ..."
+          "nutrionals": {}
         }
       },
       "recipies": [
@@ -164,7 +160,8 @@
           "null": "Pasta",
           "manualNutr": {
             "calorie": "200"
-          }
+          },
+          "": "Pasta"
         },
         {
           "name": "Tacos 3 viande",

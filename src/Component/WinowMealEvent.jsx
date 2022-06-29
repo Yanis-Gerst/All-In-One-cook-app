@@ -25,7 +25,6 @@ const WinowMealEvent = ({ e, mealEvent, toClose }) => {
   const dateValue = new Date(mealEvent.start);
   const day = daysWeek[dateValue.getDay()];
   const dayMonth = dateValue.getDate();
-
   const hours = dateValue.getHours();
   //e -> This is a mouse Event
   const posX = e.pageX;
@@ -53,7 +52,6 @@ const WinowMealEvent = ({ e, mealEvent, toClose }) => {
   };
 
   useEffect(() => {
-    console.log(mealContext);
     mealContext.update({ ...mealEvent, title });
   }, [title]);
 
@@ -82,7 +80,7 @@ const WinowMealEvent = ({ e, mealEvent, toClose }) => {
           {mealEvent.title}
         </ContentEditable>
         <p>
-          le {day} {dayMonth} de {hours} heure
+          le {day} {dayMonth} de {hours}-{mealEvent.duration}h
         </p>
       </div>
     </>

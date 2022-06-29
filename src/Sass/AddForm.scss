@@ -1,6 +1,26 @@
 .form-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
+  background-color: var(--sidebar-bg);
+  outline: 1px solid #444;
+  margin: 0 -20px;
+
+  padding: 10px;
+}
+
+.add-form-btn-close {
+  background: none;
+  border: none;
+  font-size: 2em;
+  height: min-content;
+  cursor: pointer;
+}
+
+.add-form {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
 }

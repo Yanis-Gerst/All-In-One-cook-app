@@ -4,8 +4,10 @@ import Ingredient from "./Ingredient";
 import Button from "./Button";
 import { AiOutlineClose } from "react-icons/ai";
 import { useRef } from "react";
+
 const AddIngredient = ({
   addAllIngredients,
+  deleteIngredient,
   toClose = null,
   startIndex = 1,
 }) => {
@@ -42,12 +44,23 @@ const AddIngredient = ({
     }
   };
 
+  const handleCancel = () => {
+    if (Object.keys(listIngredient) === 0) {
+      toClose();
+      return;
+    }
+    const indexToDelete = Object.keys(listIngredient);
+
+    indexToDelete.forEach((index) => deleteIngredient(Number(index - 1)));
+    toClose();
+  };
+
   return (
     <div className="add-ingredient-container">
       {toClose && (
         <button
           className="btn-close"
-          onClick={handleClose}
+          onClick={handleCancel}
           ref={firstToFocus}
           autoFocus
           onKeyDown={handleTabFirstToLast}
@@ -66,20 +79,23 @@ const AddIngredient = ({
           addNewIngredient={addNewIngredient}
         />
       ))}
-      <Button
-        text={"More Ingrédient"}
-        onClick={setNumberOfIngredients.increment}
-        className="button-add"
-      />
-      {toClose && (
-        <button
-          onClick={handleClose}
-          ref={lastToFocus}
-          onKeyDown={handleTabLastToFirst}
-        >
-          Complete
-        </button>
-      )}
+      <div className="double-spaced-container">
+        <Button
+          text={"More Ingrédient"}
+          onClick={setNumberOfIngredients.increment}
+          className="button-add-ing"
+        />
+        {toClose && (
+          <button
+            onClick={handleClose}
+            ref={lastToFocus}
+            onKeyDown={handleTabLastToFirst}
+            className="button-add"
+          >
+            Complete
+          </button>
+        )}
+      </div>
     </div>
   );
 };

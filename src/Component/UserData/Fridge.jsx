@@ -40,12 +40,14 @@ const Fridge = () => {
       if (index === i) return;
       return ing;
     });
+
     const newIngObject = newIngArray.reduce((prev, curr, i) => {
       return {
         ...prev,
         [i + 1]: curr,
       };
     }, {});
+
     setStartIndex(startIndex - 1);
     setFridgeIng({ ...newIngObject });
   };
@@ -107,6 +109,7 @@ const Fridge = () => {
         <Modale toClose={onClose}>
           <AddIngredient
             addAllIngredients={updateFridgeIng}
+            deleteIngredient={handleDelete}
             startIndex={startIndex}
           />
         </Modale>

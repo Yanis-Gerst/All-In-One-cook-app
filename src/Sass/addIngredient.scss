@@ -56,4 +56,19 @@
   right: 20px;
 }
 
+.button-add-ing {
+  background-color: var(--fridge-color);
+  border: none;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
 //Put on another file

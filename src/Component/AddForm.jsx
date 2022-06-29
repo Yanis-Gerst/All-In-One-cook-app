@@ -4,7 +4,6 @@ import AddIngredient from "./AddIngredient";
 import useMultipleInputs from "../CustomHook/useMutilpleInput";
 import { RecipiesContext } from "./Recipies";
 import { IoIosClose } from "react-icons/io";
-import { useEffect } from "react";
 import { useRef } from "react";
 
 const AddForm = ({ toClose }) => {
@@ -41,14 +40,16 @@ const AddForm = ({ toClose }) => {
   return (
     <div className="form-container">
       <div className="form-header">
-        <input
+        <button
           type="submit"
           value="add Recipies"
-          className="submit-btn"
+          className="button-add"
           onClick={onSubmit}
-          onKeyDown={handleTabLastToFirst}
           ref={lastToFocus}
-        />
+        >
+          Ajouter votre recette
+        </button>
+
         <button
           className="add-form-btn-close"
           onClick={toClose}
@@ -59,7 +60,7 @@ const AddForm = ({ toClose }) => {
           <IoIosClose />
         </button>
       </div>
-      <form>
+      <form className="add-form">
         <div className="form-control">
           <label for="recipe-name">Nom de la recette:</label>
           <input

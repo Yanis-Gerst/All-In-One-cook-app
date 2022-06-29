@@ -22,7 +22,6 @@ const RecipieDetails = ({ recipie, toClose }) => {
   const user = useUserContext();
   const [currentRecipie, setCurrentRecipie] = useState({ ...recipie });
   const [nbPerson, counterNbPerson] = useCounter(1, 1);
-  console.log(currentRecipie);
   const recipies = useContext(RecipiesContext);
   const ingredients = recipie.ingredients;
 

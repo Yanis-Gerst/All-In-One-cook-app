@@ -42,7 +42,15 @@ const localizer = dateFnsLocalizer({
 const MealPanner = () => {
   const user = useUserContext();
   const naviguate = useNavigate();
-  const [mealEvents, setMealEvents] = useState(user.data.mealEvents);
+  const [mealEvents, setMealEvents] = useState(
+    user.data.mealEvents?.map((mealEvent) => {
+      return {
+        ...mealEvent,
+        start: new Date(mealEvent.start),
+        end: new Date(mealEvent.end),
+      };
+    })
+  );
   const [detailProps, setDetailProps] = useState({});
   const showDetailsProps = Object.keys(detailProps).length > 0;
 
@@ -66,7 +74,7 @@ const MealPanner = () => {
     const idToDelete = eventToDelete.id;
     setMealEvents(
       mealEvents.filter((mealEvent) => {
-        return !idToDelete === mealEvent.id;
+        return idToDelete !== mealEvent.id;
       })
     );
   };
@@ -108,6 +116,20 @@ const MealPanner = () => {
     if (!mealEvents) return;
     user.setData({ ...user.data, mealEvents: [...mealEvents] });
   }, [mealEvents]);
+
+  useEffect(() => {
+    //
+    if (!mealEvents) return;
+    setMealEvents(
+      mealEvents.map((mealEvent) => {
+        return {
+          ...mealEvent,
+          start: new Date(mealEvent.start),
+          end: new Date(mealEvent.end),
+        };
+      })
+    );
+  }, []);
 
   if (!user.isConnected) {
     naviguate("/");

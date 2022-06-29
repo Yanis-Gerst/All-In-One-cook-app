@@ -6,6 +6,7 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   position: relative;
+  width: 150%;
 }
 
 .dropdown-container .dropdown-menu {
@@ -13,7 +14,10 @@
   top: 100%;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  background-color: beige;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  -webkit-box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+          box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,6 +34,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
+  gap: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nutrionals-inputs-container {

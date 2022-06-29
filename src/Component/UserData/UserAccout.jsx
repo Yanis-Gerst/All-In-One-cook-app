@@ -1,5 +1,6 @@
 import { useUserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import { GrPowerReset } from "react-icons/gr";
 import Modale from "../Modale";
 import useToogle from "../../CustomHook/useToogle";
 import Button from "../Button";
@@ -27,13 +28,17 @@ const UserAccout = () => {
                 <p data={`${key}-pre`}>{key}:</p>
                 <p data={`${key}-body`}>{user.data[key]}</p>
                 {key === "password" && (
-                  <Button text="Change Password" onClick={toogleShowPassForm} />
+                  <button className="button-reset" onClick={toogleShowPassForm}>
+                    <GrPowerReset />
+                  </button>
                 )}
               </div>
             );
           return elem;
         })}
-        <Button text="Déconnexion" onClick={handleDisconect} />
+        <button className="button-disconect" onClick={handleDisconect}>
+          Déconenexion
+        </button>
       </div>
 
       {showPassChangeForm && (
