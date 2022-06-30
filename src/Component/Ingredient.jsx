@@ -8,7 +8,7 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
   const [error, setError] = useState(false);
   //Handle default select input
   const unity = ingredientInput.unity || "g";
-  const quantity = ingredientInput.quantity || 0;
+  const quantity = ingredientInput.quantity || "0";
   const ingredientData = {
     [indexOfThis]: {
       ...ingredientInput,
@@ -24,8 +24,8 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
       return;
     }
 
-    if (error) setError(false);
     addNewIngredient(ingredientData);
+    if (error) setError(false);
   };
   return (
     <>
@@ -52,7 +52,7 @@ const Ingredient = ({ indexOfThis, addNewIngredient }) => {
             id="quantity"
             type="number"
             name="quantity"
-            value={ingredientInput.quantity || 0}
+            value={ingredientInput.quantity || ""}
             onChange={handleIngredientInputs}
           />
         </div>

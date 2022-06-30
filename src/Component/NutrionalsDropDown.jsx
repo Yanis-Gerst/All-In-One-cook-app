@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import useMultipleInputs from "../CustomHook/useMutilpleInput";
 
-const NutrionalsDropDown = ({ ingredient, setIngredient }) => {
+const NutrionalsDropDown = ({ ingredient, toUpdate, index }) => {
   const [nutrInput, handleNutrInuput] = useMultipleInputs(
     ingredient.nutrionals
   );
 
   useEffect(() => {
-    setIngredient({
-      ...ingredient,
-      nutrionals: { ...nutrInput },
+    toUpdate({
+      [index + 1]: {
+        ...ingredient,
+        nutrionals: { ...nutrInput },
+      },
     });
   }, [nutrInput]);
   return (
@@ -28,7 +30,7 @@ const NutrionalsDropDown = ({ ingredient, setIngredient }) => {
         <label>Protéine:</label>
         <input
           type="number"
-          name="prot"
+          name="proteine"
           onChange={handleNutrInuput}
           value={nutrInput.proteine || ""}
         />

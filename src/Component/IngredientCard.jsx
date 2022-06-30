@@ -16,37 +16,39 @@ const IngredientCard = ({
   toDelete,
   toUpdate,
 }) => {
-  const [ingredientConfig, setIngredientConfig] = useState(ingredient);
+  const ingredientConfig = { ...ingredient };
   const [quickAddValue, setQuickAddValue] = useState(100);
-
-  useEffect(() => {
-    toUpdate({
-      [index + 1]: ingredientConfig,
-    });
-  }, [ingredientConfig]);
 
   const onSubmit = (e) => {
     e.preventDefault();
     const attrName = e.target.getAttribute("data-name");
-    setIngredientConfig({
-      ...ingredientConfig,
-      [attrName]: e.target.textContent,
+
+    toUpdate({
+      [index + 1]: {
+        ...ingredientConfig,
+        [attrName]: e.target.textContent,
+      },
     });
   };
 
   const onInput = (e) => {
-    setIngredientConfig({
-      ...ingredientConfig,
-      [e.target.name]: e.target.value,
+    toUpdate({
+      [index + 1]: {
+        ...ingredientConfig,
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
   const doQuickAdd = () => {
     const newQuantity =
       Number(ingredientConfig.quantity) + Number(quickAddValue);
-    setIngredientConfig({
-      ...ingredientConfig,
-      ["quantity"]: newQuantity,
+
+    toUpdate({
+      [index + 1]: {
+        ...ingredientConfig,
+        ["quantity"]: newQuantity,
+      },
     });
   };
 
@@ -136,7 +138,8 @@ const IngredientCard = ({
           <DropDownItem>
             <NutrionalsDropDown
               ingredient={ingredientConfig}
-              setIngredient={setIngredientConfig}
+              toUpdate={toUpdate}
+              index={index}
             />
           </DropDownItem>
         </DropDown>

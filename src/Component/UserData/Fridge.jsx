@@ -56,8 +56,13 @@ const Fridge = () => {
     setShowAddForm(!showAddForm);
   };
 
-  const onClose = () => {
+  const onClose = (cancel = false) => {
     toogleAddForm();
+    //Cancel -> Handle Cancel Button
+    if (cancel) {
+      setStartIndex(Object.keys(fridgeIng).length);
+      return;
+    }
     setStartIndex(Object.keys(fridgeIng).length + 1);
   };
 
@@ -81,7 +86,7 @@ const Fridge = () => {
               return (
                 <IngredientCard
                   key={index}
-                  ingredient={value}
+                  ingredient={{ ...value }}
                   index={index}
                   swapPositionElement={swapPositionElement}
                   toDelete={handleDelete}
@@ -90,10 +95,11 @@ const Fridge = () => {
               );
             } else {
               if (!value.name?.toLowerCase().includes(searchValue)) return;
+
               return (
                 <IngredientCard
                   key={index}
-                  ingredient={value}
+                  ingredient={{ ...value }}
                   index={index}
                   swapPositionElement={swapPositionElement}
                   toDelete={handleDelete}

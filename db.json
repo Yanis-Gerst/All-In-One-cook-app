@@ -111,19 +111,11 @@
       "pseudo": "Ikims",
       "mail": "Ikims@gmail.com",
       "password": "aze",
-      "mealEvents": [
-        {
-          "end": "2022-06-29T00:30:00.000Z",
-          "start": "2022-06-28T23:30:00.000Z",
-          "duration": "1",
-          "id": 1656495161320
-        }
-      ],
+      "mealEvents": [],
       "ingredients": {
         "1": {
-          "name": "Roquefort",
+          "name": "Oui",
           "quantity": "200",
-          "tag": "Fromage",
           "unity": "g",
           "nutrionals": {}
         }

@@ -3,6 +3,7 @@ import { TextField } from "@mui/material";
 import { DesktopDateTimePicker } from "@mui/x-date-pickers";
 import "react-datetime-picker/dist/DateTimePicker.css";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { fr } from "date-fns/locale";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import Button from "./Button";
 
@@ -48,6 +49,7 @@ const AddEvent = ({ addEvent }) => {
           Pick a Start Date
           <DesktopDateTimePicker
             placeholderText="Start Date"
+            ampm={false}
             value={event.start}
             onChange={(start) => setNewEvent({ ...event, start })}
             renderInput={(params) => <TextField {...params} />}
@@ -60,12 +62,6 @@ const AddEvent = ({ addEvent }) => {
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
           />
-          {/* <DesktopDateTimePicker
-            placeholderText="End Date"
-            value={event.end}
-            onChange={(end) => setNewEvent({ ...event, end })}
-            renderInput={(params) => <TextField {...params} />}
-          /> */}
         </label>
       </LocalizationProvider>
       <Button

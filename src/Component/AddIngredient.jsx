@@ -52,7 +52,8 @@ const AddIngredient = ({
     const indexToDelete = Object.keys(listIngredient);
 
     indexToDelete.forEach((index) => deleteIngredient(Number(index - 1)));
-    toClose();
+    const byCancel = true;
+    toClose(byCancel);
   };
 
   return (
