@@ -2,9 +2,11 @@ import { useUserContext } from "../App";
 import { useCallback } from "react";
 
 const getSameIngredient = (userIngredients, ingredient) => {
+  console.log(userIngredients, ingredient);
   const sameIngredient = Object.values(userIngredients).filter((userIng) => {
     return userIng.name.toLowerCase() === ingredient.name.toLowerCase();
   });
+
   return sameIngredient;
 };
 
@@ -18,19 +20,20 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
 
   const allUserIngredients = useCallback(
     Object.values(ingredients).map((ing) => {
-      const sameIng = { ...getSameIngredient(user.data.ingredients, ing)[0] };
-      if (Object.keys(sameIng === 0)) return;
+      const sameIng = getSameIngredient(user.data.ingredients, ing)[0];
+      console.log(sameIng, "SameIng in the map");
+      if (Object.keys(sameIng).length === 0) return;
       return {
-        sameIng,
+        ...sameIng,
         currentQuantity: ing.quantity,
       };
     }),
     [ingredients, user.data.ingredient]
   );
-  console.log(allUserIngredients, "Here");
+
   const nutrionalsIsNotDefine = allUserIngredients.some((userIng) => {
     if (!userIng) return true;
-    return Object.keys(userIng.nutrionals).length === 0;
+    return Object.keys(userIng?.nutrionals).length === 0;
   });
 
   let recNutrionalsValue;

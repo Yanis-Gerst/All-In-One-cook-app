@@ -183,11 +183,14 @@ const RecipieDetails = ({ recipie, toClose }) => {
         <div className="rec-ingredient-container">
           <h4>Ingredient List:</h4>
 
-          {Object.keys(ingredients).map((key) => (
+          {Object.keys(ingredients).map((key, index) => (
             <IngredientDetails
               key={key}
+              index={index}
               ingredient={ingredients[key]}
               nbPerson={nbPerson}
+              recipie={recipie}
+              setCurrentRecipie={setCurrentRecipie}
             />
           ))}
 

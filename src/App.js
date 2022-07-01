@@ -1,4 +1,3 @@
-//Components
 import Header from "./Component/Header";
 import Login from "./Component/Login";
 import Recipies from "./Component/Recipies";

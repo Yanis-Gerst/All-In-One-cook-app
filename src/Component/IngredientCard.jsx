@@ -41,6 +41,7 @@ const IngredientCard = ({
   };
 
   const doQuickAdd = () => {
+    console.log("Ca quick add");
     const newQuantity =
       Number(ingredientConfig.quantity) + Number(quickAddValue);
 
@@ -103,7 +104,7 @@ const IngredientCard = ({
       tabIndex="0"
       onKeyDown={handleArrowShortCut}
     >
-      <GrFormAdd className="btn-quick-add" onClick={doQuickAdd} tabIndex="0" />
+      <button onClick={doQuickAdd}>Quick Add</button>
       <div className="ing-header">
         <DropDown title={<BsThreeDotsVertical />}>
           <DropDownItem>

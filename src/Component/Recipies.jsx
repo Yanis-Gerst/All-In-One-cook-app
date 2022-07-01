@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export const arrowNaviguation = (className, index) => {
   const handleArrowNaviguation = (e) => {
+    if (e.target.contentEditable || e.target.tagName === "input") return;
     if (e.key === "ArrowRight") {
       const allCard = document.querySelectorAll(className);
       if (index + 1 >= allCard.length) {

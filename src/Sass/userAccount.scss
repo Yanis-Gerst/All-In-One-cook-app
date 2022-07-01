@@ -9,6 +9,9 @@
   .data-container {
     display: flex;
     gap: 0.5em;
+    p::first-letter {
+      text-transform: capitalize;
+    }
   }
   p[data="pseudo-body"] {
     font-weight: bold;

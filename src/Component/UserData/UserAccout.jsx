@@ -25,7 +25,9 @@ const UserAccout = () => {
             key === "id" ||
             key === "mealEvents" ? null : (
               <div className="data-container" key={key}>
-                <p data={`${key}-pre`}>{key}:</p>
+                <p data={`${key}-pre`}>
+                  {key === "password" ? "Mot de passe" : key}:
+                </p>
                 <p data={`${key}-body`}>{user.data[key]}</p>
                 {key === "password" && (
                   <button className="button-reset" onClick={toogleShowPassForm}>
@@ -37,7 +39,7 @@ const UserAccout = () => {
           return elem;
         })}
         <button className="button-disconect" onClick={handleDisconect}>
-          Déconenexion
+          Déconexion
         </button>
       </div>
 

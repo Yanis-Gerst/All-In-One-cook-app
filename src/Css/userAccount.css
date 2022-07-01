@@ -20,6 +20,10 @@
   gap: 0.5em;
 }
 
+.user-info-container .data-container p::first-letter {
+  text-transform: capitalize;
+}
+
 .user-info-container p[data="pseudo-body"] {
   font-weight: bold;
 }
