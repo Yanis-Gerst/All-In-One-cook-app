@@ -37,7 +37,7 @@ const Fridge = () => {
 
   const handleDelete = (index) => {
     const newIngArray = Object.values(fridgeIng).filter((ing, i) => {
-      if (index === i) return;
+      if (index === i) return null;
       return ing;
     });
 
@@ -68,7 +68,7 @@ const Fridge = () => {
 
   useEffect(() => {
     user.setData({ ...user.data, ingredients: fridgeIng });
-  }, [fridgeIng]);
+  }, [fridgeIng, user]);
 
   return (
     <>
@@ -82,7 +82,7 @@ const Fridge = () => {
           {Object.values(fridgeIng).map((value, index) => {
             if (searchValue.includes("#")) {
               const tagInput = searchValue.replace("#", "");
-              if (!value.tag?.toLowerCase().includes(tagInput)) return;
+              if (!value.tag?.toLowerCase().includes(tagInput)) return null;
               return (
                 <IngredientCard
                   key={index}
@@ -94,7 +94,7 @@ const Fridge = () => {
                 />
               );
             } else {
-              if (!value.name?.toLowerCase().includes(searchValue)) return;
+              if (!value.name?.toLowerCase().includes(searchValue)) return null;
 
               return (
                 <IngredientCard

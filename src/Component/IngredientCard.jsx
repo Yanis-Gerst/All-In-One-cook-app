@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "./Button";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
-import { GrFormAdd } from "react-icons/gr";
+
 import DropDown from "./DropDown";
 import DropDownItem from "./DropDownItem";
 import NutrionalsDropDown from "./NutrionalsDropDown";
@@ -41,14 +41,13 @@ const IngredientCard = ({
   };
 
   const doQuickAdd = () => {
-    console.log("Ca quick add");
     const newQuantity =
       Number(ingredientConfig.quantity) + Number(quickAddValue);
 
     toUpdate({
       [index + 1]: {
         ...ingredientConfig,
-        ["quantity"]: newQuantity,
+        quantity: newQuantity,
       },
     });
   };

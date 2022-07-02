@@ -1,5 +1,4 @@
 import { useUserContext } from "../App";
-import { useCallback } from "react";
 
 const getSameIngredient = (userIngredients, ingredient) => {
   console.log(userIngredients, ingredient);
@@ -18,18 +17,15 @@ const capitalize = (str) => {
 const NutrionalsValue = ({ ingredients, nbPerson }) => {
   const user = useUserContext();
 
-  const allUserIngredients = useCallback(
-    Object.values(ingredients).map((ing) => {
-      const sameIng = getSameIngredient(user.data.ingredients, ing)[0];
-      console.log(sameIng, "SameIng in the map");
-      if (Object.keys(sameIng).length === 0) return;
-      return {
-        ...sameIng,
-        currentQuantity: ing.quantity,
-      };
-    }),
-    [ingredients, user.data.ingredient]
-  );
+  const allUserIngredients = Object.values(ingredients).map((ing) => {
+    const sameIng = getSameIngredient(user.data.ingredients, ing)[0];
+    console.log(sameIng, "SameIng in the map");
+    if (Object.keys(sameIng).length === 0) return null;
+    return {
+      ...sameIng,
+      currentQuantity: ing.quantity,
+    };
+  });
 
   const nutrionalsIsNotDefine = allUserIngredients.some((userIng) => {
     if (!userIng) return true;
@@ -87,7 +83,7 @@ const NutrionalsValue = ({ ingredients, nbPerson }) => {
           <h4>Valeur nutrionelle</h4>
           <ul>
             {Object.keys(recNutrionalsValue).map((nutrProprety) => {
-              if (!recNutrionalsValue[nutrProprety]) return;
+              if (!recNutrionalsValue[nutrProprety]) return null;
               if (nutrProprety === "calorie") {
                 return (
                   <li key={nutrProprety}>
