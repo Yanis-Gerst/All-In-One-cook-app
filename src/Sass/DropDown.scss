@@ -3,6 +3,7 @@
   justify-content: flex-end;
   position: relative;
   width: 150%;
+  pointer-events: auto;
   .dropdown-menu {
     position: absolute;
     top: 100%;

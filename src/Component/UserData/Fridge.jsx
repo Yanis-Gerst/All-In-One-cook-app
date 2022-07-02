@@ -68,7 +68,7 @@ const Fridge = () => {
 
   useEffect(() => {
     user.setData({ ...user.data, ingredients: fridgeIng });
-  }, [fridgeIng, user]);
+  }, [fridgeIng]);
 
   return (
     <>

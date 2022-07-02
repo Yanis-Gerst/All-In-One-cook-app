@@ -40,6 +40,10 @@
   gap: 0.5em;
 }
 
+.ing-card > * {
+  pointer-events: none;
+}
+
 .ing-card h1 {
   line-height: 90%;
 }

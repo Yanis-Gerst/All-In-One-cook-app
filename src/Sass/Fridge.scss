@@ -27,6 +27,10 @@
   flex-flow: column;
   gap: 0.5em;
 
+  & > * {
+    pointer-events: none;
+  }
+
   h1 {
     line-height: 90%;
   }

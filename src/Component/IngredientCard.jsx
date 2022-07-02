@@ -65,26 +65,35 @@ const IngredientCard = ({
     }
   };
   const onCardDrag = (e) => {
+    e.stopPropagation();
     e.dataTransfer.dropEffect = "move";
     e.dataTransfer.setData("ing-card", index);
   };
 
   const onCardDragOver = (e) => {
     e.preventDefault();
+    e.stopPropagation();
   };
 
   const onCardDragEnter = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+
+    if (e.target.tagName !== "DIV") return;
+    console.log("yo on met la classe enfaite");
     e.target.classList.add("drag-over");
   };
 
   const onCardDragLeave = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     e.target.classList.remove("drag-over");
   };
 
   const onCardDrop = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    e.target.classList.remove("drag-over");
     let indexOfDragCard = e.dataTransfer.getData("ing-card");
     swapPositionElement(indexOfDragCard, index);
   };
