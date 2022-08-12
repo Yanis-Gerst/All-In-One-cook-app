@@ -67,9 +67,13 @@ const Fridge = () => {
   };
 
   useEffect(() => {
+    if (!user.isConnected) return;
     user.setData({ ...user.data, ingredients: fridgeIng });
   }, [fridgeIng]);
 
+  if (!user.isConnected) {
+    return <div>Veuillez vous connecter</div>;
+  }
   return (
     <>
       <div className="fridge-container">
