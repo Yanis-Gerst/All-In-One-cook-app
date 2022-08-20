@@ -1,24 +1,9 @@
-import React, { ReactHTML } from "react";
+import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import isEmail from "validator/lib/isEmail";
 import useMultipleInputs from "../../CustomHook/useMutilpleInput";
-import { IUser } from "../../Interface/userData";
-
-const urlDbUser = "http://localhost:4001/user";
-
-const setNewAccountInDb = async (userConfig: IUser) => {
-  const res = await fetch(urlDbUser, {
-    method: "Post",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(userConfig),
-  });
-  const data = await res.json();
-  return data;
-};
-
+import { setNewAccountInDb } from "./utils";
 interface IUserInput {
   mail?: string;
   password?: string;
@@ -67,9 +52,10 @@ const Register = () => {
     setSamePassword(false);
   };
 
-  const onRegisterSubmit = (e) => {
+  const onRegisterSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     if (!samePassword || mailError) return;
+
     const id = Date.now() + Math.floor(Math.random() * 100);
     setNewAccountInDb({ ...userConfig, id });
     resetInputs();

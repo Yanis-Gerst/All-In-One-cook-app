@@ -34,7 +34,8 @@ const NutrionalsValue = ({ ingredients, nbPerson }: Props) => {
 
   const allUserIngredients = Object.values(ingredients).map(
     (ing: IIngredient) => {
-      const sameIng = getSameIngredient(user.data.ingredients, ing)[0];
+      let sameIng = getSameIngredient(user.data.ingredients, ing)[0];
+      if (sameIng === undefined) return null;
       if (Object.keys(sameIng).length === 0) return null;
       return {
         ...sameIng,
@@ -46,6 +47,7 @@ const NutrionalsValue = ({ ingredients, nbPerson }: Props) => {
   const nutrionalsIsNotDefine = allUserIngredients.some((userIng) => {
     if (!userIng) return true;
     const nutrionals = userIng.nutrionals as INutrionals;
+
     return Object.keys(nutrionals).length === 0;
   });
 
@@ -127,7 +129,7 @@ const NutrionalsValue = ({ ingredients, nbPerson }: Props) => {
 
       {priceRec ? (
         <div className="price-container">
-          <p>Prix de la recette: {priceRec}€</p>
+          <p>Prix de la recette: {priceRec * nbPerson}€</p>
         </div>
       ) : (
         <p>On a pas d'info sur le prix enfate</p>

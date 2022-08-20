@@ -23,7 +23,10 @@ interface Props {
   toClose?: () => void;
 }
 
-const RecipeDetails = ({ recipie, toClose }: Props) => {
+const RecipeDetails: React.FunctionComponent<Props> = ({
+  recipie,
+  toClose,
+}: any) => {
   const [currentRecipie, setCurrentRecipie] = useState({ ...recipie });
   const [nbPerson, counterNbPerson] = useCounter(1, 1);
   const recipies = useContext(RecipesContext);
@@ -119,6 +122,7 @@ const RecipeDetails = ({ recipie, toClose }: Props) => {
 
         <div className="rec-info">
           <ContentEditable
+            ariaLabel="recipe title input"
             className="rec-name"
             data="name"
             onBlur={onSubmit}
@@ -131,6 +135,7 @@ const RecipeDetails = ({ recipie, toClose }: Props) => {
           <div className="rec-wrapper">
             <GiCookingPot />
             <ContentEditable
+              ariaLabel="preparation time input"
               className="rec-prep"
               data="prepTime"
               onBlur={onSubmit}
@@ -142,6 +147,7 @@ const RecipeDetails = ({ recipie, toClose }: Props) => {
           <div className="rec-wrapper">
             <GiCook />
             <ContentEditable
+              ariaLabel="cooking time input"
               className="rec-cooking-time"
               data="cookTime"
               onBlur={onSubmit}
@@ -151,6 +157,7 @@ const RecipeDetails = ({ recipie, toClose }: Props) => {
             </ContentEditable>
           </div>
           <ContentEditable
+            ariaLabel="descriptions input"
             className="rec-desc"
             data="desc"
             onBlur={onSubmit}
@@ -170,6 +177,7 @@ const RecipeDetails = ({ recipie, toClose }: Props) => {
           <div className="rec-wrapper">
             <BsTag />
             <ContentEditable
+              ariaLabel="tag input"
               data-name="tag"
               onBlur={onSubmit}
               onKeyPress={handleInput}
@@ -193,7 +201,7 @@ const RecipeDetails = ({ recipie, toClose }: Props) => {
           <h4>Ingredient List:</h4>
 
           {ingredients &&
-            Object.keys(ingredients).map((key, index) => (
+            Object.keys(ingredients).map((key: any, index: number) => (
               <IngredientDetails
                 key={key}
                 index={index}

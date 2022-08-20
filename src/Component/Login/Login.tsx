@@ -13,10 +13,11 @@ export const fetchAllUserDataFromDb = async () => {
   return data;
 };
 
-const storeUserData = (userData: IUser) => {
+export const storeUserData = (userData: IUser) => {
   //Voir pour tester des choses qui vont dans le localStorage
   //Si il déjà enregister pas refaire a coder
-  window.localStorage.setItem(
+
+  localStorage.setItem(
     JSON.stringify(userData.pseudo),
     JSON.stringify(userData)
   );
@@ -46,6 +47,7 @@ const Login = () => {
     e.preventDefault();
     const allUserData: IUser[] = await fetchAllUserDataFromDb();
     //Can get only one element
+
     const thisUser = allUserData.filter((userData) => {
       return (
         userData.mail === userInputs.mail &&
@@ -57,6 +59,7 @@ const Login = () => {
       setError(true);
       return;
     }
+
     // A la base thisUser.id
     if (rememberUser) storeUserData(thisUser);
 
@@ -100,11 +103,11 @@ const Login = () => {
 
         <div className="form-control">
           <input
+            aria-label="Remeber Me"
             type="checkbox"
             checked={rememberUser}
             onChange={toogleRememberUser}
           />
-          <label>Remeber Me</label>
         </div>
 
         <div className="action-container">

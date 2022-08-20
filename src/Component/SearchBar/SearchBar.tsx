@@ -10,6 +10,7 @@ const SearchBar = ({ toUpdate, value, placeholder = "" }) => {
     <div className="search-bar-container">
       <div className="search-input-container">
         <input
+          aria-label="Search Bar for your Recipes"
           type="text"
           className="search-input"
           placeholder={placeholder}

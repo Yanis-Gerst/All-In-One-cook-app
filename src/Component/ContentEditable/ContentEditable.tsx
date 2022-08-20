@@ -9,11 +9,13 @@ const ContentEditable = ({
   },
   tagName = "div",
   children,
+  ariaLabel = "",
 }) => {
   const CustomTag: any = tagName;
   return (
     <>
       <CustomTag
+        aria-label={ariaLabel}
         contentEditable="true"
         suppressContentEditableWarning={true}
         className={className}

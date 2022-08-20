@@ -40,6 +40,7 @@ const AddForm = ({ toClose }: Props) => {
   const onSubmit = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     const id = Date.now() + Math.floor(Math.random() * 100);
+    console.log(inputs, "submitMan");
     const rec = { ...inputs } as IRecipe;
     recipies?.add({ ...rec, ingredients, id });
     if (!toClose) return;
@@ -127,7 +128,7 @@ const AddForm = ({ toClose }: Props) => {
           </div>
 
           <div className="form-control">
-            <label htmlFor="note">Difficulty</label>
+            <label htmlFor="note">the note</label>
             <input
               id="note"
               type="number"
@@ -139,7 +140,7 @@ const AddForm = ({ toClose }: Props) => {
           </div>
 
           <div className="form-control">
-            <label htmlFor="tag">Tag</label>
+            <label htmlFor="tag">Tag your recipe</label>
             <input
               id="tag"
               type="text"
@@ -151,7 +152,7 @@ const AddForm = ({ toClose }: Props) => {
         </div>
 
         <div className="form-control">
-          <label htmlFor="url-img">Img Url</label>
+          <label htmlFor="url-img">The url of your image (optionnel)</label>
           <input
             id="url-img"
             type="text"
@@ -166,6 +167,7 @@ const AddForm = ({ toClose }: Props) => {
           <label htmlFor="description">Descriptions/Informations</label>
           <textarea
             id="description"
+            placeholder="..."
             name="desc"
             value={inputs.desc || ""}
             onChange={handleInputs}
@@ -177,6 +179,7 @@ const AddForm = ({ toClose }: Props) => {
           <textarea
             id="process"
             name="process"
+            placeholder="Comment on fait ?"
             value={inputs.process || ""}
             onChange={handleInputs}
           ></textarea>

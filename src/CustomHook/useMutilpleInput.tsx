@@ -21,6 +21,7 @@ const useMultipleInputs = (
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     //Need name in input Jsx
+
     const { name, value } = e.target;
 
     setState({
