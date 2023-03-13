@@ -1,5 +1,33 @@
+# General
 
-## Available Scripts
+It is a CRUD web application that helps users with their daily intake. This site can manage the user's inventory and recipes. One can calculate the macronutrients and calories of the recipes and plan their meals.
+
+This website is build with React + Typescript and Json Server.
+	
+A complete UI and UX design overhaul of the website, as well as the addition of technologies like Redux and TypeScript, along with the implementation of a database.
+
+# Technologies
+
+- React
+- Json Server
+
+# Scope of functionalities
+
+## Done ✅
+
+- To store Ingredients 
+- To store Recipes
+- To calculate Calories, nutriments and price of recipes 
+
+## In progress🛠️
+
+- To set Calories and nutrients goals
+	- To get Suggestion recipies
+- To create a Meal Planner 
+- To secure Login System
+- To implement Typescript
+
+# Setup
 
 In the project directory, you can run:
 
